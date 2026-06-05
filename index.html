@@ -249,12 +249,13 @@
       z-index: 1;
     }
     .hero-brand-logo {
-      margin-bottom: 28px;
+      text-align: center;
+      margin-bottom: 48px;
     }
     .hero-brand-logo img {
       height: 216px;
       width: auto;
-      display: block;
+      display: inline-block;
       mix-blend-mode: multiply;
     }
     .hero-eyebrow {
@@ -796,11 +797,11 @@
 <section id="hero">
   <div class="hero-dot-grid"></div>
   <div class="container">
+    <div class="hero-brand-logo fade-up">
+      <img src="sinergi_logo_full_transparent.png" alt="Sinergi" />
+    </div>
     <div class="hero-inner">
-      <div class="hero-text fade-up">
-        <div class="hero-brand-logo">
-          <img src="sinergi_logo_full_transparent.png" alt="Sinergi" />
-        </div>
+      <div class="hero-text fade-up" style="transition-delay:0.1s">
         <div class="hero-eyebrow" data-i18n="hero_eyebrow">Creación de Contenido &amp; Performance · El Salvador</div>
         <h1 class="hero-h1">
           <span data-i18n="hero_h1_1">No vendemos likes.</span><br>
@@ -812,7 +813,7 @@
           <a href="#contacto" class="btn btn-outline" data-i18n="hero_btn2">Contactar</a>
         </div>
       </div>
-      <div class="hero-image-wrap fade-up" style="transition-delay:0.15s">
+      <div class="hero-image-wrap fade-up" style="transition-delay:0.2s">
         <div class="hero-glow"></div>
         <img src="hero-image.jpg" alt="Sinergi App" />
       </div>
