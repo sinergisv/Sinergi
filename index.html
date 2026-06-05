@@ -71,12 +71,14 @@
       color: var(--text-primary);
       line-height: 1.15;
       margin-bottom: 16px;
+      text-wrap: balance;
     }
     .section-sub {
       font-size: 17px;
       color: var(--text-secondary);
       max-width: 560px;
       line-height: 1.7;
+      text-wrap: pretty;
     }
     .btn {
       display: inline-flex;
@@ -130,7 +132,7 @@
       height: 68px;
       gap: 16px;
     }
-    .nav-logo img { height: 36px; display: block; }
+    .nav-logo img { height: 52px; display: block; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -270,6 +272,7 @@
       color: var(--text-primary);
       margin-bottom: 24px;
       letter-spacing: -0.02em;
+      text-wrap: balance;
     }
     .hero-h1 span { color: var(--blue); }
     .hero-sub {
@@ -278,6 +281,7 @@
       line-height: 1.7;
       margin-bottom: 36px;
       max-width: 480px;
+      text-wrap: pretty;
     }
     .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
     .hero-image-wrap {
@@ -300,7 +304,7 @@
       width: 100%;
       max-width: 540px;
       height: auto;
-      filter: drop-shadow(0 20px 60px rgba(24,71,212,0.15));
+      mix-blend-mode: multiply;
     }
 
     /* ─── NUMBERS ─── */
@@ -369,12 +373,14 @@
       color: var(--text-primary);
       margin-bottom: 12px;
       line-height: 1.3;
+      text-wrap: balance;
     }
     .why-col-desc {
       font-size: 14px;
       color: var(--text-secondary);
       margin-bottom: 20px;
       line-height: 1.7;
+      text-wrap: pretty;
     }
     .why-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .why-list li {
@@ -611,6 +617,7 @@
       max-width: 640px;
       margin-left: auto;
       margin-right: auto;
+      text-wrap: balance;
     }
     #diferenciador p {
       font-size: 17px;
@@ -618,6 +625,7 @@
       max-width: 540px;
       margin: 0 auto 36px;
       line-height: 1.7;
+      text-wrap: pretty;
     }
 
     /* ─── CONTACT ─── */
@@ -629,8 +637,9 @@
       color: var(--text-primary);
       margin-bottom: 12px;
       letter-spacing: -0.02em;
+      text-wrap: balance;
     }
-    .contact-left p { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; }
+    .contact-left p { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; text-wrap: pretty; }
     .contact-buttons { display: flex; flex-direction: column; gap: 12px; }
     .contact-btn {
       display: flex;
@@ -698,7 +707,7 @@
       text-align: center;
     }
     .footer-logo img {
-      height: 28px;
+      height: 44px;
       filter: brightness(0) invert(1);
       opacity: 0.75;
     }
@@ -925,10 +934,25 @@
       <p class="section-sub" data-i18n="svc_sub">Elige la categoría que se ajusta a lo que tu negocio necesita ahora.</p>
     </div>
 
+    <!-- DIAGNÓSTICO COMERCIAL — Servicio destacado independiente -->
+    <div class="fade-up" style="margin-bottom:40px;">
+      <div class="service-card featured" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px 36px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:260px;">
+          <div class="plan-name" style="font-size:11px;color:var(--blue);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px" data-i18n="addon_label">ADD-ON · Recomendado para empezar</div>
+          <div class="service-card-name" style="font-size:20px;margin-bottom:8px;" data-i18n="svc3_3_name">Diagnóstico Comercial</div>
+          <div class="service-card-desc" data-i18n="svc3_3_desc">Sesión presencial de 2 horas para analizar tu negocio, identificar oportunidades de contenido y definir el plan de acción.</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:12px;flex-shrink:0;">
+          <div class="service-card-price" style="font-size:32px;">$200</div>
+          <a href="#contacto" class="btn btn-blue" style="white-space:nowrap;" data-i18n="dif_cta">Empecemos</a>
+        </div>
+      </div>
+    </div>
+
     <div class="tabs-nav fade-up">
       <button class="tab-btn active" onclick="switchTab(0)" data-i18n="tab1">📲 Contenido Orgánico</button>
-      <button class="tab-btn" onclick="switchTab(1)" data-i18n="tab2">🎬 Producción Audiovisual</button>
-      <button class="tab-btn" onclick="switchTab(2)" data-i18n="tab3">🏫 Formación &amp; Talleres</button>
+      <button class="tab-btn" onclick="switchTab(1)" data-i18n="tab3">🏫 Formación &amp; Talleres</button>
+      <button class="tab-btn" onclick="switchTab(2)" data-i18n="tab2">🎬 Producción Audiovisual</button>
       <button class="tab-btn" onclick="switchTab(3)" data-i18n="tab4">⚙️ Implementación Digital</button>
     </div>
 
@@ -982,19 +1006,20 @@
       </div>
     </div>
 
-    <!-- TAB 2 -->
+    <!-- TAB 2 — FORMACIÓN & TALLERES (reordered: was tab-2, now tab-1) -->
     <div class="tab-panel" id="tab-1">
-      <p class="tab-desc" data-i18n="tab2_desc">Producción profesional para creadores, influencers y marcas que necesitan contenido de alto impacto.</p>
+      <p class="tab-desc" data-i18n="tab3_desc">Talleres y programas para equipos que quieren crear contenido efectivo de forma interna.</p>
       <div class="services-2col">
         <div class="service-card fade-up">
-          <div class="service-card-name" data-i18n="svc2_1_name">Video para creadores / influencers</div>
-          <div class="service-card-price">$75 <span style="font-size:15px;font-weight:500;color:var(--text-secondary)" data-i18n="svc2_1_price2">· 3 videos $160</span></div>
-          <div class="service-card-desc" data-i18n="svc2_1_desc">Producción individual o en paquete para creadores que necesitan contenido frecuente y de calidad.</div>
+          <div class="service-card-name" data-i18n="svc3_1_name">Taller intensivo de contenido</div>
+          <div class="service-card-price">$350</div>
+          <div class="service-card-desc" data-i18n="svc3_1_desc">Sesión presencial de alto impacto, hasta 5 personas. Metodología, práctica y estrategia en un solo día.</div>
         </div>
-        <div class="service-card fade-up" style="transition-delay:0.1s">
-          <div class="service-card-name" data-i18n="svc2_2_name">Producción de podcast</div>
-          <div class="service-card-price">$120 <span style="font-size:15px;font-weight:500;color:var(--text-secondary)" data-i18n="svc2_2_price2">por episodio</span></div>
-          <div class="service-card-desc" data-i18n="svc2_2_desc">Grabación, edición y entrega de tu episodio listo para publicar en todas las plataformas.</div>
+        <div class="service-card featured fade-up" style="transition-delay:0.1s">
+          <div class="plan-badge" data-i18n="badge_popular">Más popular</div>
+          <div class="service-card-name" data-i18n="svc3_2_name">Programa de formación de equipo</div>
+          <div class="service-card-price">$800</div>
+          <div class="service-card-desc" data-i18n="svc3_2_desc">Programa de 4 a 6 semanas para equipos que quieren dominar la creación de contenido orgánico internamente.</div>
         </div>
         <div class="service-card fade-up" style="transition-delay:0.2s">
           <div class="service-card-name" data-i18n="svc2_3_name">TikTok Live Commerce — Nivel 1</div>
@@ -1009,26 +1034,19 @@
       </div>
     </div>
 
-    <!-- TAB 3 -->
+    <!-- TAB 3 — PRODUCCIÓN AUDIOVISUAL (reordered: was tab-1, now tab-2, sin TikTok Live) -->
     <div class="tab-panel" id="tab-2">
-      <p class="tab-desc" data-i18n="tab3_desc">Talleres y programas para equipos que quieren crear contenido efectivo de forma interna.</p>
+      <p class="tab-desc" data-i18n="tab2_desc">Producción profesional para creadores, influencers y marcas que necesitan contenido de alto impacto.</p>
       <div class="services-2col">
         <div class="service-card fade-up">
-          <div class="service-card-name" data-i18n="svc3_1_name">Taller intensivo de contenido</div>
-          <div class="service-card-price">$350</div>
-          <div class="service-card-desc" data-i18n="svc3_1_desc">Sesión presencial de alto impacto, hasta 5 personas. Metodología, práctica y estrategia en un solo día.</div>
+          <div class="service-card-name" data-i18n="svc2_1_name">Video para creadores / influencers</div>
+          <div class="service-card-price">$75 <span style="font-size:15px;font-weight:500;color:var(--text-secondary)" data-i18n="svc2_1_price2">· 3 videos $160</span></div>
+          <div class="service-card-desc" data-i18n="svc2_1_desc">Producción individual o en paquete para creadores que necesitan contenido frecuente y de calidad.</div>
         </div>
-        <div class="service-card featured fade-up" style="transition-delay:0.1s">
-          <div class="plan-badge" data-i18n="badge_popular">Más popular</div>
-          <div class="service-card-name" data-i18n="svc3_2_name">Programa de formación de equipo</div>
-          <div class="service-card-price">$800</div>
-          <div class="service-card-desc" data-i18n="svc3_2_desc">Programa de 4 a 6 semanas para equipos que quieren dominar la creación de contenido orgánico internamente.</div>
-        </div>
-        <div class="service-card fade-up" style="transition-delay:0.2s; grid-column: span 2;" id="addon-card">
-          <div class="plan-name" style="font-size:11px;color:var(--blue);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px" data-i18n="addon_label">ADD-ON</div>
-          <div class="service-card-name" data-i18n="svc3_3_name">Diagnóstico comercial</div>
-          <div class="service-card-price">$200</div>
-          <div class="service-card-desc" data-i18n="svc3_3_desc">Sesión presencial de 2 horas para analizar tu negocio, identificar oportunidades de contenido y definir el plan de acción.</div>
+        <div class="service-card fade-up" style="transition-delay:0.1s">
+          <div class="service-card-name" data-i18n="svc2_2_name">Producción de podcast</div>
+          <div class="service-card-price">$120 <span style="font-size:15px;font-weight:500;color:var(--text-secondary)" data-i18n="svc2_2_price2">por episodio</span></div>
+          <div class="service-card-desc" data-i18n="svc2_2_desc">Grabación, edición y entrega de tu episodio listo para publicar en todas las plataformas.</div>
         </div>
       </div>
     </div>
@@ -1186,7 +1204,7 @@ const translations = {
     ba4_before: 'Agencia genérica', ba4_after: 'Aliado en tu operación',
     svc_tag: 'Todo lo que hacemos', svc_h2: 'Servicios diseñados para crecer',
     svc_sub: 'Elige la categoría que se ajusta a lo que tu negocio necesita ahora.',
-    tab1: '📲 Contenido Orgánico', tab2: '🎬 Producción Audiovisual', tab3: '🏫 Formación & Talleres', tab4: '⚙️ Implementación Digital',
+    tab1: '📲 Contenido Orgánico', tab2: '🏫 Formación & Talleres', tab3: '🎬 Producción Audiovisual', tab4: '⚙️ Implementación Digital',
     tab1_desc: 'Videos diseñados para detener el scroll, generar confianza y convertir seguidores en compradores. Mínimo 3 meses.',
     plan1_name: 'Plan Arranque', plan2_name: 'Plan Crecimiento', plan3_name: 'Plan Dominancia',
     plan_month: '/mes', badge_popular: 'Más popular',
@@ -1251,7 +1269,7 @@ const translations = {
     ba4_before: 'Generic agency', ba4_after: 'Ally in your operation',
     svc_tag: 'Everything we do', svc_h2: 'Services designed to grow',
     svc_sub: 'Choose the category that fits what your business needs right now.',
-    tab1: '📲 Organic Content', tab2: '🎬 Audiovisual Production', tab3: '🏫 Training & Workshops', tab4: '⚙️ Digital Implementation',
+    tab1: '📲 Organic Content', tab2: '🏫 Training & Workshops', tab3: '🎬 Audiovisual Production', tab4: '⚙️ Digital Implementation',
     tab1_desc: 'Videos designed to stop the scroll, build trust and turn followers into buyers. Minimum 3 months.',
     plan1_name: 'Starter Plan', plan2_name: 'Growth Plan', plan3_name: 'Dominance Plan',
     plan_month: '/month', badge_popular: 'Most popular',
@@ -1315,12 +1333,10 @@ function setLang(lang) {
 
 function updateCounterSuffix() {
   const counters = document.querySelectorAll('[data-count]');
-  counters.forEach(el => {
+  counters.forEach((el, idx) => {
     const count = parseInt(el.getAttribute('data-count'));
-    el.textContent = count + 'K+';
-    if (el.closest('.number-item') && el.closest('.number-item').querySelector('[data-i18n="num2_label"]')) {
-      el.textContent = count + 'M+';
-    }
+    const suffix = idx === 0 ? 'K+' : idx === 1 ? 'M+' : '+';
+    el.textContent = count + suffix;
   });
 }
 
@@ -1365,16 +1381,14 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 // ─── Counter animation ───
-const numberSuffixes = { 0: 'K+', 1: 'M+', 2: '+', 3: '+' };
-const numberPrefixes = { 0: '', 1: '', 2: '', 3: '' };
-
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     const el = entry.target;
     const target = parseInt(el.getAttribute('data-count'));
     const idx = [...document.querySelectorAll('[data-count]')].indexOf(el);
-    const suffix = idx === 1 ? 'M+' : (idx < 2 ? 'K+' : '+');
+    // idx 0 = 100K+ followers, idx 1 = 5M+ views, idx 2 = 6+ companies, idx 3 = 10+ years
+    const suffix = idx === 0 ? 'K+' : idx === 1 ? 'M+' : '+';
     let current = 0;
     const duration = 1200;
     const step = target / (duration / 16);
