@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sinergi · Creación de Contenido &amp; Performance · El Salvador</title>
   <meta name="description" content="Agencia de video orgánico y performance en El Salvador. TikTok, Reels, podcast, capacitaciones y más." />
-  <meta property="og:title" content="Sinergi · Creación de Contenido & Performance · El Salvador" />
-  <meta property="og:description" content="Agencia de video orgánico y performance en El Salvador. TikTok, Reels, podcast, capacitaciones y más." />
-  <meta property="og:image" content="hero-image.png" />
-  <meta property="og:type" content="website" />
+  <meta property="og:image" content="hero-image.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,720 +16,1389 @@
       --blue: #1847d4;
       --blue-dark: #0d2a85;
       --blue-light: #eef2fd;
-      --blue-glow: rgba(24,71,212,0.15);
+      --black: #0a0a0a;
+      --text-primary: #0a0a0a;
+      --text-secondary: #6b7280;
       --bg: #ffffff;
-      --bg2: #f8f9fc;
-      --bg3: #f2f4f9;
-      --card: #ffffff;
+      --bg-alt: #f8f9fc;
       --border: rgba(0,0,0,0.08);
-      --border-blue: rgba(24,71,212,0.3);
-      --text: #0a0a0a;
-      --text-muted: #6b7280;
-      --text-dim: #9ca3af;
-      --green: #16a34a;
-      --radius: 14px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+      --radius: 12px;
       --radius-sm: 8px;
-      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
       background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg2); }
-    ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
-
-    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-
+    /* ─── UTILITIES ─── */
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
     .eyebrow {
-      font-size: 11px; font-weight: 600; letter-spacing: 0.13em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
     }
-
+    .eyebrow-blue { color: var(--blue); }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border: 1px solid rgba(24,71,212,0.2);
+      background: var(--blue-light);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    h2.section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+    }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      gap: 8px; padding: 13px 26px; border-radius: var(--radius-sm);
-      font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500;
-      cursor: pointer; transition: all 0.2s ease; text-decoration: none;
-      border: none; min-height: 44px; white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+      text-decoration: none;
+      min-height: 44px;
     }
-    .btn-primary { background: var(--blue); color: #fff; }
-    .btn-primary:hover { background: #1540c0; transform: translateY(-2px); box-shadow: 0 8px 24px var(--blue-glow); }
-    .btn-outline { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
+    .btn-blue { background: var(--blue); color: #fff; }
+    .btn-blue:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24,71,212,0.25); }
+    .btn-outline { background: transparent; color: var(--text-primary); border-color: var(--border); border-color: rgba(0,0,0,0.15); }
     .btn-outline:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
-    .btn-green { background: var(--green); color: #fff; }
-    .btn-green:hover { background: #15803d; transform: translateY(-2px); }
-    .btn-lg { padding: 16px 36px; font-size: 15px; }
+    .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255,255,255,0.5); }
+    .btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    .btn-green { background: #16a34a; color: #fff; }
+    .btn-green:hover { background: #15803d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(22,163,74,0.25); }
 
-    /* FADE UP */
-    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    /* Fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* ── NAV ── */
-    #navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 0 24px; transition: all 0.3s ease;
-      background: rgba(255,255,255,0.0);
+    /* ─── NAV ─── */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background 0.3s, box-shadow 0.3s;
     }
-    #navbar.scrolled {
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+    #nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 0 var(--border);
     }
-    .nav-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; height: 72px; gap: 32px; }
-    .nav-logo { text-decoration: none; }
-    .nav-logo img { height: 52px; display: block; }
-    .nav-links { display: flex; gap: 28px; list-style: none; margin-left: auto; }
-    .nav-links a { font-size: 14px; font-weight: 400; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
-
-    .lang-toggle { display: flex; align-items: center; background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-    .lang-btn { padding: 6px 10px; cursor: pointer; color: var(--text-muted); transition: all 0.2s; background: transparent; border: none; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 16px;
+    }
+    .nav-logo img { height: 36px; display: block; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--blue); }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: all 0.2s;
+    }
     .lang-btn.active { background: var(--blue); color: #fff; }
-
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: transparent; border: none; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
-    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-
+    .nav-cta { padding: 9px 18px; font-size: 14px; }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      border: none;
+      background: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
     .mobile-menu {
-      display: none; position: fixed; top: 72px; left: 0; right: 0;
-      background: rgba(255,255,255,0.97); backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border); padding: 24px; z-index: 99;
-      flex-direction: column; gap: 4px; box-shadow: var(--shadow-md);
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px 24px;
+      z-index: 99;
+      box-shadow: var(--shadow-md);
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 16px; color: var(--text-muted); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
     .mobile-menu a:last-of-type { border-bottom: none; }
+    .mobile-menu-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+    }
 
-    /* ── HERO ── */
+    /* ─── HERO ─── */
     #hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding-top: 72px; background: var(--bg); overflow: hidden; position: relative;
+      padding: 120px 0 80px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
     }
-    /* subtle dot grid */
-    #hero::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background-image: radial-gradient(circle, rgba(24,71,212,0.08) 1px, transparent 1px);
+    .hero-dot-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(24,71,212,0.09) 1.5px, transparent 1.5px);
       background-size: 32px 32px;
-      mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, black 30%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 60% 80% at 80% 50%, black 30%, transparent 80%);
+      mask-image: radial-gradient(ellipse 60% 80% at 80% 50%, black 30%, transparent 80%);
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+    .hero-h1 {
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero-h1 span { color: var(--blue); }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(24,71,212,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-image-wrap img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 540px;
+      height: auto;
+      filter: drop-shadow(0 20px 60px rgba(24,71,212,0.15));
     }
 
-    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 60px; padding: 80px 0; }
-    .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-    .hero-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 2px; background: var(--blue); border-radius: 2px; }
-    .hero-h1 { font-size: clamp(38px, 5.5vw, 64px); font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 24px; color: var(--text); }
-    .hero-sub { font-size: 17px; font-weight: 400; line-height: 1.7; color: var(--text-muted); max-width: 460px; margin-bottom: 36px; }
-    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
-    .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
-    .hero-glow { position: absolute; width: 75%; height: 65%; background: radial-gradient(ellipse, rgba(24,71,212,0.12) 0%, transparent 70%); filter: blur(40px); pointer-events: none; }
-    .hero-img { width: 100%; max-width: 560px; position: relative; z-index: 1; border-radius: var(--radius); }
-
-    /* ── METRICS ── */
-    #metrics { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 52px 24px; }
-    .metrics-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
-    .metric-item { text-align: center; padding: 16px 24px; border-right: 1px solid var(--border); }
-    .metric-item:last-child { border-right: none; }
-    .metric-number { font-size: clamp(28px,4vw,44px); font-weight: 700; color: var(--blue); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px; }
-    .metric-label { font-size: 13px; color: var(--text); font-weight: 500; }
-    .metric-sublabel { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
-
-    /* ── SECTIONS ── */
-    section { padding: 100px 0; }
-    .section-header { margin-bottom: 56px; }
-    .section-h2 { font-size: clamp(28px,4vw,44px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.12; max-width: 640px; color: var(--text); }
-    .section-p { font-size: 16px; color: var(--text-muted); line-height: 1.7; max-width: 580px; margin-top: 16px; }
-
-    /* ── COMPARATIVA ── */
-    #problema { background: var(--bg); }
-    .comparativa-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
-    .comparativa-col { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 36px; }
-    .comparativa-col.nosotros { background: var(--blue-light); border-color: var(--border-blue); }
-    .col-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; color: var(--text-muted); }
-    .col-label.blue { color: var(--blue); }
-    .col-title { font-size: 20px; font-weight: 700; margin-bottom: 12px; line-height: 1.25; color: var(--text); }
-    .col-desc { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
-    .col-list { list-style: none; margin-top: 20px; }
-    .col-list li { font-size: 13px; color: var(--text-muted); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px; }
-    .col-list li:last-child { border-bottom: none; }
-    .col-list li::before { content: '·'; color: var(--text-dim); font-size: 18px; flex-shrink: 0; line-height: 1; }
-    .col-list.blue-check li::before { content: '✓'; color: var(--blue); font-size: 12px; font-weight: 700; margin-top: 2px; }
-
-    .problema-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-    .problema-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.25s; }
-    .problema-card:hover { border-color: var(--border-blue); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-    .problema-before { font-size: 13px; color: var(--text-dim); text-decoration: line-through; margin-bottom: 8px; }
-    .problema-after { font-size: 15px; font-weight: 600; color: var(--blue); margin-bottom: 8px; }
-    .problema-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
-
-    /* ── SERVICIOS ── */
-    #servicios { background: var(--bg2); }
-    .cat-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 48px; }
-    .cat-tab {
-      padding: 9px 20px; border-radius: 30px; font-size: 13px; font-weight: 500;
-      cursor: pointer; transition: all 0.2s; border: 1.5px solid var(--border);
-      background: var(--bg); color: var(--text-muted); font-family: 'Inter', sans-serif;
+    /* ─── NUMBERS ─── */
+    #numbers {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0;
     }
-    .cat-tab:hover { border-color: var(--blue); color: var(--blue); }
-    .cat-tab.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .number-item {
+      text-align: center;
+      padding: 24px 20px;
+      border-right: 1px solid var(--border);
+    }
+    .number-item:last-child { border-right: none; }
+    .number-value {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .number-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .number-sub {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
 
-    .cat-section { display: none; }
-    .cat-section.active { display: block; }
-    .cat-header { margin-bottom: 36px; }
-    .cat-icon { font-size: 28px; margin-bottom: 12px; }
-    .cat-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-    .cat-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; max-width: 600px; }
+    /* ─── WHY SECTION ─── */
+    #why { padding: 96px 0; background: #fff; }
+    .why-intro { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+    .why-intro .section-sub { margin: 0 auto; text-align: center; }
+    .why-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .why-col {
+      padding: 36px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .why-col-left {
+      background: var(--bg-alt);
+      opacity: 0.8;
+    }
+    .why-col-right {
+      background: var(--blue-light);
+      border-color: rgba(24,71,212,0.2);
+    }
+    .why-col-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .why-col-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .why-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+    .why-list li .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #9ca3af;
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .why-list li .check {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-list li .check svg { width: 9px; height: 9px; }
+    .why-list.right li { color: var(--text-primary); }
 
-    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-    .services-grid.two-col { grid-template-columns: repeat(2,1fr); }
+    .before-after {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .ba-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all 0.2s;
+    }
+    .ba-card:hover { border-color: rgba(24,71,212,0.3); box-shadow: 0 4px 16px rgba(24,71,212,0.06); transform: translateY(-2px); }
+    .ba-before {
+      font-size: 14px;
+      color: #9ca3af;
+      text-decoration: line-through;
+      flex: 1;
+    }
+    .ba-arrow { color: var(--blue); font-size: 18px; flex-shrink: 0; }
+    .ba-after {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+      text-align: right;
+    }
 
+    /* ─── SERVICES ─── */
+    #services { padding: 96px 0; background: var(--bg-alt); }
+    .services-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+    .services-header .section-sub { margin: 0 auto; }
+    .tabs-nav {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    .tab-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .tab-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+    .tab-desc {
+      text-align: center;
+      font-size: 15px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .plan-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: all 0.2s;
+    }
+    .plan-card:hover { border-color: rgba(24,71,212,0.3); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .plan-card.featured {
+      background: var(--blue-light);
+      border-color: rgba(24,71,212,0.3);
+    }
+    .plan-badge {
+      display: inline-flex;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(24,71,212,0.12);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+    .plan-name {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+    .plan-price {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .plan-period { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
+    .plan-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .plan-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13.5px;
+      color: var(--text-primary);
+    }
+    .plan-list li::before {
+      content: '✓';
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tab-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+    }
+    .addon-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid rgba(24,71,212,0.2);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-top: 12px;
+    }
+
+    /* Services 2-col for tabs 2, 3, 4 */
+    .services-2col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .service-card {
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 32px; transition: all 0.25s; display: flex; flex-direction: column;
-      box-shadow: var(--shadow);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: all 0.2s;
     }
-    .service-card:hover { border-color: var(--border-blue); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-    .service-card.featured { border-color: var(--blue); background: var(--blue-light); }
-    .service-card.featured:hover { box-shadow: 0 8px 32px var(--blue-glow); }
-    .plan-badge { display: inline-block; background: var(--blue); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 14px; }
-    .service-name { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.3; color: var(--text); }
-    .service-price { font-size: 32px; font-weight: 700; color: var(--blue); letter-spacing: -0.02em; margin-bottom: 4px; line-height: 1; }
-    .service-price sup { font-size: 16px; font-weight: 500; vertical-align: top; margin-top: 5px; display: inline-block; }
-    .service-period { font-size: 12px; color: var(--text-muted); margin-bottom: 20px; }
-    .service-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; flex: 1; }
-    .service-features { list-style: none; margin-bottom: 20px; }
-    .service-features li { font-size: 13px; color: var(--text-muted); padding: 7px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
-    .service-features li:last-child { border-bottom: none; }
-    .service-features li::before { content: '✓'; color: var(--blue); font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
-    .service-cta { margin-top: auto; }
-
-    .addon-strip { margin-top: 24px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 22px; font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 12px; }
-    .addon-strip strong { color: var(--blue); }
-
-    /* ── DIFERENCIADOR ── */
-    #diferenciador { background: var(--blue); text-align: center; padding: 120px 24px; }
-    .dif-h2 { font-size: clamp(30px,4.5vw,52px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; max-width: 680px; margin: 0 auto 24px; color: #fff; }
-    .dif-p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 540px; margin: 0 auto 40px; }
-    #diferenciador .btn-outline { color: #fff; border-color: rgba(255,255,255,0.4); }
-    #diferenciador .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
-
-    /* ── CONTACTO ── */
-    #contacto { background: var(--bg); }
-    .contacto-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-    .contacto-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
-    .form-group { margin-bottom: 18px; }
-    .form-label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%; background: var(--bg2); border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm); padding: 12px 16px; color: var(--text);
-      font-family: 'Inter', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s;
-      appearance: none; -webkit-appearance: none;
+    .service-card:hover { border-color: rgba(24,71,212,0.3); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .service-card.featured {
+      background: var(--blue-light);
+      border-color: rgba(24,71,212,0.3);
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--blue); background: #fff; }
-    .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239ca3af' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; background-color: var(--bg2); padding-right: 36px; }
-    .form-textarea { resize: vertical; min-height: 110px; }
-    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-dim); }
-    .form-success { display: none; background: var(--blue-light); border: 1.5px solid var(--border-blue); border-radius: var(--radius); padding: 32px; text-align: center; color: var(--text); }
-    .form-success.show { display: block; }
-    .form-success-icon { font-size: 36px; margin-bottom: 12px; }
-    .form-success p { font-size: 15px; color: var(--text-muted); }
+    .service-card-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .service-card-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .service-card-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
 
-    /* ── FOOTER ── */
-    footer { background: var(--text); padding: 48px 24px; }
-    .footer-inner { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
-    .footer-logo img { height: 38px; filter: brightness(0) invert(1); opacity: 0.8; }
-    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.45); }
-    .footer-links { display: flex; gap: 20px; list-style: none; }
-    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: #fff; }
+    /* ─── DIFERENCIADOR ─── */
+    #diferenciador {
+      background: var(--blue);
+      padding: 96px 0;
+      text-align: center;
+    }
+    #diferenciador h2 {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #diferenciador p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.75);
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
 
-    /* ── RESPONSIVE ── */
+    /* ─── CONTACT ─── */
+    #contacto { padding: 96px 0; background: #fff; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .contact-left h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .contact-left p { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; }
+    .contact-buttons { display: flex; flex-direction: column; gap: 12px; }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .contact-btn-wa { background: #16a34a; color: #fff; }
+    .contact-btn-wa:hover { background: #15803d; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(22,163,74,0.25); }
+    .contact-btn-mail { background: var(--blue); color: #fff; }
+    .contact-btn-mail:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(24,71,212,0.25); }
+    .contact-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* Form */
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text-primary);
+      background: #fff;
+      outline: none;
+      transition: border 0.2s;
+      min-height: 44px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(24,71,212,0.08);
+    }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .form-success {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      text-align: center;
+      color: #15803d;
+      font-weight: 600;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+    .footer-logo img {
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.75;
+    }
+    .footer-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.85); }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2,1fr); }
-      .services-grid.two-col { grid-template-columns: 1fr; }
+      .plans-grid { grid-template-columns: repeat(2, 1fr); }
+      .before-after { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .nav-right .btn { display: none; }
-      .hamburger { display: flex; margin-left: auto; }
-      .nav-right { gap: 8px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 0; text-align: center; }
-      .hero-eyebrow { justify-content: center; }
+      .nav-links, .nav-right .btn { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .hero-buttons { justify-content: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
-      .hero-ctas { justify-content: center; }
-      .hero-visual { order: 2; }
-      .metrics-grid { grid-template-columns: repeat(2,1fr); }
-      .metric-item { border-bottom: 1px solid var(--border); }
-      .metric-item:nth-child(2) { border-right: none; }
-      .metric-item:nth-child(3) { border-bottom: none; }
-      .metric-item:last-child { border-bottom: none; border-right: none; }
-      .comparativa-intro { grid-template-columns: 1fr; }
-      .problema-cards { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .services-grid.two-col { grid-template-columns: 1fr; }
-      .contacto-inner { grid-template-columns: 1fr; gap: 48px; }
-      section { padding: 72px 0; }
-      #diferenciador { padding: 80px 24px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-image-wrap { order: -1; }
+      .hero-image-wrap img { max-width: 340px; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .number-item:nth-child(2) { border-right: none; }
+      .why-cols { grid-template-columns: 1fr; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .services-2col { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .contact-left { text-align: center; }
+      .contact-buttons { align-items: stretch; }
+      #hero { padding-top: 100px; min-height: auto; }
     }
+
     @media (max-width: 480px) {
-      .container { padding: 0 18px; }
-      .hero-ctas { flex-direction: column; width: 100%; }
-      .hero-ctas .btn { width: 100%; }
-      .cat-tab { font-size: 12px; padding: 8px 14px; }
+      .tabs-nav { gap: 6px; }
+      .tab-btn { font-size: 13px; padding: 8px 14px; }
+      .before-after { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="navbar">
+<!-- ─── NAV ─── -->
+<nav id="nav">
+  <div class="container">
     <div class="nav-inner">
-      <a class="nav-logo" href="#hero"><img src="sinergi_sin_fondo.png" alt="Sinergi" /></a>
+      <a class="nav-logo" href="#hero">
+        <img src="sinergi_sin_fondo_transparent.png" alt="Sinergi" />
+      </a>
       <ul class="nav-links">
-        <li><a href="#hero" data-i18n="nav-inicio">Inicio</a></li>
-        <li><a href="#servicios" data-i18n="nav-servicios">Servicios</a></li>
-        <li><a href="#contacto" data-i18n="nav-contacto">Contacto</a></li>
+        <li><a href="#hero" data-i18n="nav_inicio">Inicio</a></li>
+        <li><a href="#services" data-i18n="nav_servicios">Servicios</a></li>
+        <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
       </ul>
       <div class="nav-right">
         <div class="lang-toggle">
-          <button class="lang-btn active" data-lang="es">ES</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" onclick="setLang('es')">ES</button>
+          <button class="lang-btn" onclick="setLang('en')">EN</button>
         </div>
-        <a href="#contacto" class="btn btn-primary" data-i18n="nav-cta">Hablemos</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#hero" data-i18n="nav-inicio">Inicio</a>
-    <a href="#servicios" data-i18n="nav-servicios">Servicios</a>
-    <a href="#contacto" data-i18n="nav-contacto">Contacto</a>
-    <a href="#contacto" class="btn btn-primary" style="margin-top:8px;" data-i18n="nav-cta">Hablemos</a>
-  </div>
-
-  <!-- HERO -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <div>
-          <p class="hero-eyebrow fade-up" data-i18n="hero-eyebrow">Creación de Contenido &amp; Performance · El Salvador</p>
-          <h1 class="hero-h1 fade-up" style="transition-delay:0.08s">
-            <span data-i18n="hero-h1a">No vendemos likes.</span><br>
-            <span class="hero-h1b" data-i18n="hero-h1b">Construimos <span style="color:var(--blue)">facturación.</span></span>
-          </h1>
-          <p class="hero-sub fade-up" style="transition-delay:0.16s" data-i18n="hero-sub">Sinergi se asocia con empresas medianas para digitalizar y escalar sus ventas con contenido orgánico real y resultados medibles.</p>
-          <div class="hero-ctas fade-up" style="transition-delay:0.24s">
-            <a href="#servicios" class="btn btn-primary" data-i18n="hero-btn1">Ver servicios</a>
-            <a href="#contacto" class="btn btn-outline" data-i18n="hero-btn2">Contactar</a>
-          </div>
-        </div>
-        <div class="hero-visual fade-up" style="transition-delay:0.12s">
-          <div class="hero-glow"></div>
-          <img class="hero-img" src="hero-image.png" alt="Sinergi performance" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- METRICS -->
-  <div id="metrics">
-    <div class="metrics-grid">
-      <div class="metric-item fade-up">
-        <div class="metric-number"><span class="counter" data-target="100" data-suffix="K+">0</span></div>
-        <div class="metric-label" data-i18n="metric1">Seguidores TikTok</div>
-        <div class="metric-sublabel" data-i18n="metric1b">En nuestras marcas propias</div>
-      </div>
-      <div class="metric-item fade-up" style="transition-delay:0.08s">
-        <div class="metric-number"><span class="counter" data-target="5" data-suffix="M+">0</span></div>
-        <div class="metric-label" data-i18n="metric2">Views orgánicos</div>
-        <div class="metric-sublabel" data-i18n="metric2b">Sin un solo dólar en pauta</div>
-      </div>
-      <div class="metric-item fade-up" style="transition-delay:0.16s">
-        <div class="metric-number"><span class="counter" data-target="6" data-suffix="+">0</span></div>
-        <div class="metric-label" data-i18n="metric3">Empresas propias creadas</div>
-        <div class="metric-sublabel" data-i18n="metric3b">Varias ganadoras de mercado</div>
-      </div>
-      <div class="metric-item fade-up" style="transition-delay:0.24s">
-        <div class="metric-number"><span class="counter" data-target="10" data-suffix="+">0</span></div>
-        <div class="metric-label" data-i18n="metric4">Años de experiencia</div>
-        <div class="metric-sublabel" data-i18n="metric4b">Creando negocios digitales</div>
+        <a href="#contacto" class="btn btn-blue nav-cta" data-i18n="nav_cta">Hablemos</a>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </div>
+</nav>
 
-  <!-- COMPARATIVA -->
-  <section id="problema">
-    <div class="container">
-      <div class="section-header fade-up">
-        <p class="eyebrow" data-i18n="prob-eyebrow">Por qué importa la diferencia</p>
-        <h2 class="section-h2" data-i18n="prob-h2">No todos los videos son lo mismo.</h2>
-        <p class="section-p" data-i18n="prob-p">Hay dos tipos de contenido: el que se ve bonito y el que vende. La mayoría de agencias hace el primero. Nosotros hacemos el segundo.</p>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero" onclick="closeMobile()" data-i18n="nav_inicio">Inicio</a>
+  <a href="#services" onclick="closeMobile()" data-i18n="nav_servicios">Servicios</a>
+  <a href="#contacto" onclick="closeMobile()" data-i18n="nav_contacto">Contacto</a>
+  <div class="mobile-menu-bottom">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="mobileLangEs" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" id="mobileLangEn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#contacto" class="btn btn-blue" onclick="closeMobile()" data-i18n="nav_cta">Hablemos</a>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-dot-grid"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text fade-up">
+        <div class="hero-eyebrow" data-i18n="hero_eyebrow">Creación de Contenido &amp; Performance · El Salvador</div>
+        <h1 class="hero-h1">
+          <span data-i18n="hero_h1_1">No vendemos likes.</span><br>
+          <span data-i18n="hero_h1_2">Construimos <span style="color:var(--blue)">facturación.</span></span>
+        </h1>
+        <p class="hero-sub" data-i18n="hero_sub">Sinergi se asocia con empresas medianas para digitalizar y escalar sus ventas con contenido orgánico real y resultados medibles.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-blue" data-i18n="hero_btn1">Ver servicios</a>
+          <a href="#contacto" class="btn btn-outline" data-i18n="hero_btn2">Contactar</a>
+        </div>
       </div>
-      <div class="comparativa-intro">
-        <div class="comparativa-col fade-up">
-          <p class="col-label" data-i18n="col-ellos-label">Video de alta producción</p>
-          <h3 class="col-title" data-i18n="col-ellos-title">Impresionante por fuera. Silencioso en ventas.</h3>
-          <p class="col-desc" data-i18n="col-ellos-desc">Las agencias tradicionales invierten en equipos costosos y producción cinematográfica. El resultado se ve impresionante, pero está diseñado para ganar premios, no clientes.</p>
-          <ul class="col-list">
-            <li data-i18n="col-ellos-f1">Requiere presupuesto alto de producción</li>
-            <li data-i18n="col-ellos-f2">Foco en estética, no en conversión</li>
-            <li data-i18n="col-ellos-f3">No aprovecha el algoritmo orgánico</li>
-            <li data-i18n="col-ellos-f4">Ciclos de producción lentos (semanas)</li>
-            <li data-i18n="col-ellos-f5">Métricas de vanidad como entregable</li>
+      <div class="hero-image-wrap fade-up" style="transition-delay:0.15s">
+        <div class="hero-glow"></div>
+        <img src="hero-image.jpg" alt="Sinergi App" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NUMBERS ─── -->
+<section id="numbers">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="number-item fade-up">
+        <div class="number-value" data-count="100">0</div>
+        <div class="number-label" data-i18n="num1_label">Seguidores TikTok</div>
+        <div class="number-sub" data-i18n="num1_sub">En nuestras marcas propias</div>
+      </div>
+      <div class="number-item fade-up" style="transition-delay:0.1s">
+        <div class="number-value" data-count="5">0</div>
+        <div class="number-label" data-i18n="num2_label">Views orgánicos</div>
+        <div class="number-sub" data-i18n="num2_sub">Sin un solo dólar en pauta</div>
+      </div>
+      <div class="number-item fade-up" style="transition-delay:0.2s">
+        <div class="number-value" data-count="6">0</div>
+        <div class="number-label" data-i18n="num3_label">Empresas propias creadas</div>
+        <div class="number-sub" data-i18n="num3_sub">Varias ganadoras de mercado</div>
+      </div>
+      <div class="number-item fade-up" style="transition-delay:0.3s">
+        <div class="number-value" data-count="10">0</div>
+        <div class="number-label" data-i18n="num4_label">Años de experiencia</div>
+        <div class="number-sub" data-i18n="num4_sub">Creando negocios digitales</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY ─── -->
+<section id="why">
+  <div class="container">
+    <div class="why-intro fade-up">
+      <div class="section-tag" data-i18n="why_tag">Por qué importa la diferencia</div>
+      <h2 class="section-title" data-i18n="why_h2">No todos los videos son lo mismo.</h2>
+      <p class="section-sub" data-i18n="why_sub">Existe una diferencia enorme entre un video que impresiona y un video que vende. La mayoría de las agencias producen el primero. Sinergi construye el segundo.</p>
+    </div>
+
+    <div class="why-cols">
+      <div class="why-col why-col-left fade-up">
+        <div class="eyebrow" data-i18n="why_left_eyebrow">Video de alta producción</div>
+        <div class="why-col-title" data-i18n="why_left_title">Impresionante por fuera. Silencioso en ventas.</div>
+        <div class="why-col-desc" data-i18n="why_left_desc">Las agencias tradicionales invierten en producción cinematográfica que se ve bien pero no genera clientes reales ni conversiones medibles.</div>
+        <ul class="why-list">
+          <li><span class="dot"></span><span data-i18n="why_left_1">Presupuesto alto en producción, ROI bajo</span></li>
+          <li><span class="dot"></span><span data-i18n="why_left_2">Estética genérica sin diferenciación</span></li>
+          <li><span class="dot"></span><span data-i18n="why_left_3">Sin estrategia de conversión detrás</span></li>
+          <li><span class="dot"></span><span data-i18n="why_left_4">Resultados difíciles de medir</span></li>
+          <li><span class="dot"></span><span data-i18n="why_left_5">Dependencia de pauta pagada para visibilidad</span></li>
+        </ul>
+      </div>
+      <div class="why-col why-col-right fade-up" style="transition-delay:0.1s">
+        <div class="eyebrow eyebrow-blue" data-i18n="why_right_eyebrow">Video orgánico · Sinergi</div>
+        <div class="why-col-title" data-i18n="why_right_title">Diseñado para generar ventas reales.</div>
+        <div class="why-col-desc" data-i18n="why_right_desc">Videos construidos con psicología de compra digital, probados en nuestras propias empresas antes de aplicarlos a las tuyas.</div>
+        <ul class="why-list right">
+          <li><span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="why_right_1">Contenido que genera ventas directas</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="why_right_2">Estrategia basada en datos reales</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="why_right_3">Probado en empresas propias primero</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="why_right_4">Métricas claras de rendimiento</span></li>
+          <li><span class="check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="why_right_5">Alcance orgánico sin depender de pauta</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="before-after fade-up">
+      <div class="ba-card">
+        <div class="ba-before" data-i18n="ba1_before">Likes y seguidores</div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-after" data-i18n="ba1_after">Ventas reales</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-before" data-i18n="ba2_before">Posts bonitos</div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-after" data-i18n="ba2_after">Contenido que convierte</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-before" data-i18n="ba3_before">Pauta sin estrategia</div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-after" data-i18n="ba3_after">Video orgánico que vende solo</div>
+      </div>
+      <div class="ba-card">
+        <div class="ba-before" data-i18n="ba4_before">Agencia genérica</div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-after" data-i18n="ba4_after">Aliado en tu operación</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section id="services">
+  <div class="container">
+    <div class="services-header fade-up">
+      <div class="section-tag" data-i18n="svc_tag">Todo lo que hacemos</div>
+      <h2 class="section-title" data-i18n="svc_h2">Servicios diseñados para crecer</h2>
+      <p class="section-sub" data-i18n="svc_sub">Elige la categoría que se ajusta a lo que tu negocio necesita ahora.</p>
+    </div>
+
+    <div class="tabs-nav fade-up">
+      <button class="tab-btn active" onclick="switchTab(0)" data-i18n="tab1">📲 Contenido Orgánico</button>
+      <button class="tab-btn" onclick="switchTab(1)" data-i18n="tab2">🎬 Producción Audiovisual</button>
+      <button class="tab-btn" onclick="switchTab(2)" data-i18n="tab3">🏫 Formación &amp; Talleres</button>
+      <button class="tab-btn" onclick="switchTab(3)" data-i18n="tab4">⚙️ Implementación Digital</button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div class="tab-panel active" id="tab-0">
+      <p class="tab-desc" data-i18n="tab1_desc">Videos diseñados para detener el scroll, generar confianza y convertir seguidores en compradores. Mínimo 3 meses.</p>
+      <div class="plans-grid">
+        <div class="plan-card fade-up">
+          <div class="plan-name" data-i18n="plan1_name">Plan Arranque</div>
+          <div class="plan-price">$300</div>
+          <div class="plan-period" data-i18n="plan_month">/mes</div>
+          <ul class="plan-list">
+            <li data-i18n="p1_1">4 videos orgánicos TikTok/Reels</li>
+            <li data-i18n="p1_2">1 sesión de grabación en tu negocio</li>
+            <li data-i18n="p1_3">Guión, dirección y edición</li>
+            <li data-i18n="p1_4">Estrategia de publicación</li>
+            <li data-i18n="p1_5">Reunión mensual 30 min</li>
           </ul>
         </div>
-        <div class="comparativa-col nosotros fade-up" style="transition-delay:0.1s">
-          <p class="col-label blue" data-i18n="col-nos-label">Video orgánico · Sinergi</p>
-          <h3 class="col-title" data-i18n="col-nos-title">Diseñado para <span style="color:var(--blue)">generar ventas reales.</span></h3>
-          <p class="col-desc" data-i18n="col-nos-desc">Nuestros videos están construidos con la psicología de compra del consumidor digital: ganchos que detienen el scroll, narrativas que generan confianza y llamados a la acción que convierten.</p>
-          <ul class="col-list blue-check">
-            <li data-i18n="col-nos-f1">Producción ágil, entrega en días</li>
-            <li data-i18n="col-nos-f2">Guión con estrategia de conversión</li>
-            <li data-i18n="col-nos-f3">Optimizado para algoritmos TikTok/Reels</li>
-            <li data-i18n="col-nos-f4">Métricas atadas a tu facturación</li>
-            <li data-i18n="col-nos-f5">Probado en nuestras propias marcas</li>
+        <div class="plan-card featured fade-up" style="transition-delay:0.1s">
+          <div class="plan-badge" data-i18n="badge_popular">Más popular</div>
+          <div class="plan-name" data-i18n="plan2_name">Plan Crecimiento</div>
+          <div class="plan-price">$600</div>
+          <div class="plan-period" data-i18n="plan_month">/mes</div>
+          <ul class="plan-list">
+            <li data-i18n="p2_1">8 videos orgánicos TikTok/Reels</li>
+            <li data-i18n="p2_2">1 sesión de grabación en tu negocio</li>
+            <li data-i18n="p2_3">Guión, dirección y edición</li>
+            <li data-i18n="p2_4">Estrategia de contenido mensual</li>
+            <li data-i18n="p2_5">Reporte de métricas mensual</li>
+            <li data-i18n="p2_6">Reunión mensual 45 min</li>
+          </ul>
+        </div>
+        <div class="plan-card fade-up" style="transition-delay:0.2s">
+          <div class="plan-name" data-i18n="plan3_name">Plan Dominancia</div>
+          <div class="plan-price">$900</div>
+          <div class="plan-period" data-i18n="plan_month">/mes</div>
+          <ul class="plan-list">
+            <li data-i18n="p3_1">12 videos orgánicos TikTok/Reels</li>
+            <li data-i18n="p3_2">2 sesiones de grabación en tu negocio</li>
+            <li data-i18n="p3_3">Guión, dirección y edición</li>
+            <li data-i18n="p3_4">Estrategia y ángulos de venta</li>
+            <li data-i18n="p3_5">Reporte quincenal con análisis</li>
+            <li data-i18n="p3_6">Reunión quincenal 1 hora</li>
           </ul>
         </div>
       </div>
-      <div class="problema-cards">
-        <div class="problema-card fade-up">
-          <p class="problema-before" data-i18n="prob-b1">Likes y seguidores</p>
-          <p class="problema-after" data-i18n="prob-a1">→ Ventas reales</p>
-          <p class="problema-desc" data-i18n="prob-d1">Medimos el impacto en facturación, no en corazones rojos.</p>
+      <div class="tab-note">
+        <p data-i18n="tab1_note">Sinergi produce y entrega. El cliente publica y gestiona comentarios.</p>
+        <span class="addon-pill">✦ <span data-i18n="tab1_addon">¿Sin presentador? Lo llevamos nosotros · +$75/sesión</span></span>
+      </div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div class="tab-panel" id="tab-1">
+      <p class="tab-desc" data-i18n="tab2_desc">Producción profesional para creadores, influencers y marcas que necesitan contenido de alto impacto.</p>
+      <div class="services-2col">
+        <div class="service-card fade-up">
+          <div class="service-card-name" data-i18n="svc2_1_name">Video para creadores / influencers</div>
+          <div class="service-card-price">$75 <span style="font-size:15px;font-weight:500;color:var(--text-secondary)" data-i18n="svc2_1_price2">· 3 videos $160</span></div>
+          <div class="service-card-desc" data-i18n="svc2_1_desc">Producción individual o en paquete para creadores que necesitan contenido frecuente y de calidad.</div>
         </div>
-        <div class="problema-card fade-up" style="transition-delay:0.08s">
-          <p class="problema-before" data-i18n="prob-b2">Posts bonitos</p>
-          <p class="problema-after" data-i18n="prob-a2">→ Contenido que convierte</p>
-          <p class="problema-desc" data-i18n="prob-d2">Cada video tiene un guión diseñado para mover al cliente a la acción.</p>
+        <div class="service-card fade-up" style="transition-delay:0.1s">
+          <div class="service-card-name" data-i18n="svc2_2_name">Producción de podcast</div>
+          <div class="service-card-price">$120 <span style="font-size:15px;font-weight:500;color:var(--text-secondary)" data-i18n="svc2_2_price2">por episodio</span></div>
+          <div class="service-card-desc" data-i18n="svc2_2_desc">Grabación, edición y entrega de tu episodio listo para publicar en todas las plataformas.</div>
         </div>
-        <div class="problema-card fade-up" style="transition-delay:0.12s">
-          <p class="problema-before" data-i18n="prob-b3">Pauta sin estrategia</p>
-          <p class="problema-after" data-i18n="prob-a3">→ Video orgánico que vende solo</p>
-          <p class="problema-desc" data-i18n="prob-d3">El mejor algoritmo es un video que la gente quiere ver y compartir.</p>
+        <div class="service-card fade-up" style="transition-delay:0.2s">
+          <div class="service-card-name" data-i18n="svc2_3_name">TikTok Live Commerce — Nivel 1</div>
+          <div class="service-card-price">$350</div>
+          <div class="service-card-desc" data-i18n="svc2_3_desc">Estrategia y ejecución de transmisión en vivo para vender en tiempo real con nuestra metodología probada.</div>
         </div>
-        <div class="problema-card fade-up" style="transition-delay:0.2s">
-          <p class="problema-before" data-i18n="prob-b4">Agencia genérica</p>
-          <p class="problema-after" data-i18n="prob-a4">→ Aliado en tu operación</p>
-          <p class="problema-desc" data-i18n="prob-d4">Nos integramos contigo. Conocemos tu producto, tu cliente y tu mercado.</p>
+        <div class="service-card fade-up" style="transition-delay:0.3s">
+          <div class="service-card-name" data-i18n="svc2_4_name">TikTok Live Commerce — Nivel 2</div>
+          <div class="service-card-price">$250</div>
+          <div class="service-card-desc" data-i18n="svc2_4_desc">Modalidad complementaria de Live Commerce para marcas que ya operan en la plataforma.</div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios">
-    <div class="container">
-      <div class="section-header fade-up">
-        <p class="eyebrow" data-i18n="serv-eyebrow">Todo lo que hacemos</p>
-        <h2 class="section-h2" data-i18n="serv-h2">Servicios diseñados para crecer</h2>
-        <p class="section-p" data-i18n="serv-p">Elige la categoría que se ajusta a lo que tu negocio necesita ahora.</p>
-      </div>
-      <div class="cat-tabs fade-up">
-        <button class="cat-tab active" data-cat="contenido" data-i18n="tab1">📲 Contenido Orgánico</button>
-        <button class="cat-tab" data-cat="audiovisual" data-i18n="tab2">🎬 Producción Audiovisual</button>
-        <button class="cat-tab" data-cat="formacion" data-i18n="tab3">🏫 Formación & Talleres</button>
-        <button class="cat-tab" data-cat="digital" data-i18n="tab4">⚙️ Implementación Digital</button>
-      </div>
-
-      <!-- CAT 1 -->
-      <div class="cat-section active" id="cat-contenido">
-        <div class="cat-header fade-up">
-          <div class="cat-icon">📲</div>
-          <h3 class="cat-title" data-i18n="cat1-title">Paquetes de Contenido Orgánico</h3>
-          <p class="cat-desc" data-i18n="cat1-desc">Videos diseñados para detener el scroll, generar confianza y convertir seguidores en compradores. Guión, dirección, edición y estrategia incluidos. Mínimo 3 meses.</p>
+    <!-- TAB 3 -->
+    <div class="tab-panel" id="tab-2">
+      <p class="tab-desc" data-i18n="tab3_desc">Talleres y programas para equipos que quieren crear contenido efectivo de forma interna.</p>
+      <div class="services-2col">
+        <div class="service-card fade-up">
+          <div class="service-card-name" data-i18n="svc3_1_name">Taller intensivo de contenido</div>
+          <div class="service-card-price">$350</div>
+          <div class="service-card-desc" data-i18n="svc3_1_desc">Sesión presencial de alto impacto, hasta 5 personas. Metodología, práctica y estrategia en un solo día.</div>
         </div>
-        <div class="services-grid">
-          <div class="service-card fade-up">
-            <p class="service-name" data-i18n="p1-name">Plan Arranque</p>
-            <div class="service-price"><sup>$</sup>300</div>
-            <p class="service-period" data-i18n="p1-period">/mes · mín. 3 meses</p>
-            <ul class="service-features">
-              <li data-i18n="p1-f1">4 videos orgánicos TikTok/Reels</li>
-              <li data-i18n="p1-f2">1 sesión de grabación en tu negocio</li>
-              <li data-i18n="p1-f3">Guión, dirección y edición</li>
-              <li data-i18n="p1-f4">Estrategia de publicación</li>
-              <li data-i18n="p1-f5">Reunión mensual 30 min</li>
-            </ul>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Empezar</a></div>
-          </div>
-          <div class="service-card featured fade-up" style="transition-delay:0.1s">
-            <span class="plan-badge" data-i18n="plan-badge">Más popular</span>
-            <p class="service-name" data-i18n="p2-name">Plan Crecimiento</p>
-            <div class="service-price"><sup>$</sup>600</div>
-            <p class="service-period" data-i18n="p2-period">/mes · mín. 3 meses</p>
-            <ul class="service-features">
-              <li data-i18n="p2-f1">8 videos orgánicos TikTok/Reels</li>
-              <li data-i18n="p2-f2">1 sesión de grabación en tu negocio</li>
-              <li data-i18n="p2-f3">Guión, dirección y edición</li>
-              <li data-i18n="p2-f4">Estrategia de contenido mensual</li>
-              <li data-i18n="p2-f5">Reporte de métricas mensual</li>
-              <li data-i18n="p2-f6">Reunión mensual 45 min</li>
-            </ul>
-            <div class="service-cta"><a href="#contacto" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="plan-cta">Empezar</a></div>
-          </div>
-          <div class="service-card fade-up" style="transition-delay:0.2s">
-            <p class="service-name" data-i18n="p3-name">Plan Dominancia</p>
-            <div class="service-price"><sup>$</sup>900</div>
-            <p class="service-period" data-i18n="p3-period">/mes · mín. 3 meses</p>
-            <ul class="service-features">
-              <li data-i18n="p3-f1">12 videos orgánicos TikTok/Reels</li>
-              <li data-i18n="p3-f2">2 sesiones de grabación en tu negocio</li>
-              <li data-i18n="p3-f3">Guión, dirección y edición</li>
-              <li data-i18n="p3-f4">Estrategia y ángulos de venta</li>
-              <li data-i18n="p3-f5">Reporte quincenal con análisis</li>
-              <li data-i18n="p3-f6">Reunión quincenal 1 hora</li>
-            </ul>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Empezar</a></div>
-          </div>
+        <div class="service-card featured fade-up" style="transition-delay:0.1s">
+          <div class="plan-badge" data-i18n="badge_popular">Más popular</div>
+          <div class="service-card-name" data-i18n="svc3_2_name">Programa de formación de equipo</div>
+          <div class="service-card-price">$800</div>
+          <div class="service-card-desc" data-i18n="svc3_2_desc">Programa de 4 a 6 semanas para equipos que quieren dominar la creación de contenido orgánico internamente.</div>
         </div>
-        <div class="addon-strip fade-up" style="margin-top:20px">
-          <span style="font-size:20px">🎙</span>
-          <p><strong data-i18n="addon-text">¿Sin presentador? Lo llevamos nosotros · +$75/sesión</strong> <span data-i18n="addon-sub" style="font-weight:400"> — Presentador profesional incluido en tu sesión.</span></p>
-        </div>
-        <p style="font-size:13px;color:var(--text-muted);margin-top:14px;text-align:center" data-i18n="planes-footnote">Sinergi produce y entrega. El cliente publica y gestiona comentarios.</p>
-      </div>
-
-      <!-- CAT 2 -->
-      <div class="cat-section" id="cat-audiovisual">
-        <div class="cat-header fade-up">
-          <div class="cat-icon">🎬</div>
-          <h3 class="cat-title" data-i18n="cat2-title">Producción Audiovisual</h3>
-          <p class="cat-desc" data-i18n="cat2-desc">Servicios de grabación y edición profesional para proyectos puntuales: creadores, podcasts y transmisiones en vivo con estrategia de venta.</p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card fade-up">
-            <p class="service-name" data-i18n="sv1-name">Video para creadores / influencers</p>
-            <div class="service-price"><sup>$</sup>75</div>
-            <p class="service-period" data-i18n="sv1-period">por video · pack 3 videos $160</p>
-            <p class="service-desc" data-i18n="sv1-desc">Grabamos y editamos tu contenido en eventos, sesiones o locaciones. Entrega en 48 hrs.</p>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Cotizar</a></div>
-          </div>
-          <div class="service-card fade-up" style="transition-delay:0.1s">
-            <p class="service-name" data-i18n="sv2-name">Producción de podcast</p>
-            <div class="service-price"><sup>$</sup>120</div>
-            <p class="service-period" data-i18n="sv2-period">por episodio</p>
-            <p class="service-desc" data-i18n="sv2-desc">Grabación, edición de audio y video, thumbnail y entrega lista para publicar en cualquier plataforma.</p>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Cotizar</a></div>
-          </div>
-          <div class="service-card fade-up" style="transition-delay:0.2s">
-            <p class="service-name" data-i18n="sv3-name">TikTok Live Commerce</p>
-            <div class="service-price"><sup>$</sup>350</div>
-            <p class="service-period" data-i18n="sv3-period">Nivel 1 desde cero · Nivel 2 conversión $250</p>
-            <p class="service-desc" data-i18n="sv3-desc">Capacitación presencial para vender en vivo con estrategia probada. Máx. 3 personas por sesión.</p>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Cotizar</a></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CAT 3 -->
-      <div class="cat-section" id="cat-formacion">
-        <div class="cat-header fade-up">
-          <div class="cat-icon">🏫</div>
-          <h3 class="cat-title" data-i18n="cat3-title">Formación & Talleres</h3>
-          <p class="cat-desc" data-i18n="cat3-desc">Capacitamos a tu equipo para que cree contenido que vende, sin depender de una agencia para siempre.</p>
-        </div>
-        <div class="services-grid two-col">
-          <div class="service-card fade-up">
-            <p class="service-name" data-i18n="sv4a-name">Taller intensivo de contenido</p>
-            <div class="service-price"><sup>$</sup>350</div>
-            <p class="service-period" data-i18n="sv4a-period">Sesión presencial · hasta 5 personas</p>
-            <p class="service-desc" data-i18n="sv4a-desc">Un día completo de formación práctica: cómo grabar, estructurar guiones y publicar contenido que convierte.</p>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Reservar</a></div>
-          </div>
-          <div class="service-card featured fade-up" style="transition-delay:0.1s">
-            <span class="plan-badge" data-i18n="plan-badge-rec">Recomendado</span>
-            <p class="service-name" data-i18n="sv4b-name">Programa de formación de equipo</p>
-            <div class="service-price"><sup>$</sup>800</div>
-            <p class="service-period" data-i18n="sv4b-period">Programa completo · 4-6 semanas</p>
-            <p class="service-desc" data-i18n="sv4b-desc">Formación progresiva para que tu equipo domine la creación de contenido orgánico de inicio a fin.</p>
-            <ul class="service-features">
-              <li data-i18n="sv4b-f1">Estrategia de contenido para tu industria</li>
-              <li data-i18n="sv4b-f2">Producción y guiones de conversión</li>
-              <li data-i18n="sv4b-f3">Calendario editorial 30 días</li>
-              <li data-i18n="sv4b-f4">Sesión de seguimiento al mes</li>
-            </ul>
-            <div class="service-cta"><a href="#contacto" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="plan-cta">Reservar</a></div>
-          </div>
-        </div>
-        <div class="addon-strip fade-up" style="margin-top:20px">
-          <span style="font-size:20px">🔍</span>
-          <p><strong data-i18n="diag-addon">Diagnóstico comercial · $200</strong> <span data-i18n="diag-addon-sub" style="font-weight:400"> — Sesión presencial 2 horas. Identificamos tus 3 problemas y te damos 3 acciones concretas.</span></p>
-        </div>
-      </div>
-
-      <!-- CAT 4 -->
-      <div class="cat-section" id="cat-digital">
-        <div class="cat-header fade-up">
-          <div class="cat-icon">⚙️</div>
-          <h3 class="cat-title" data-i18n="cat4-title">Implementación Digital</h3>
-          <p class="cat-desc" data-i18n="cat4-desc">Construimos la infraestructura digital que tu negocio necesita para vender y operar mejor.</p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card fade-up">
-            <p class="service-name" data-i18n="sv5-name">Branding completo</p>
-            <div class="service-price"><sup>$</sup>600</div>
-            <p class="service-period" data-i18n="sv5-period">Pago único</p>
-            <p class="service-desc" data-i18n="sv5-desc">Logo, paleta de colores, tipografía, manual de marca y kit completo para redes sociales.</p>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Cotizar</a></div>
-          </div>
-          <div class="service-card featured fade-up" style="transition-delay:0.1s">
-            <span class="plan-badge" data-i18n="plan-badge-pop">Popular</span>
-            <p class="service-name" data-i18n="sv6-name">Página web con cobros integrados</p>
-            <div class="service-price"><sup>$</sup>1,200</div>
-            <p class="service-period" data-i18n="sv6-period">Pago único · incluye capacitación</p>
-            <p class="service-desc" data-i18n="sv6-desc">Diseño, desarrollo, integración de cobros con tarjeta y capacitación para que la administres tú mismo.</p>
-            <ul class="service-features">
-              <li data-i18n="sv6-f1">Diseño personalizado a tu marca</li>
-              <li data-i18n="sv6-f2">Cobros con tarjeta automáticos</li>
-              <li data-i18n="sv6-f3">SEO básico incluido</li>
-              <li data-i18n="sv6-f4">Capacitación 2 horas</li>
-            </ul>
-            <div class="service-cta"><a href="#contacto" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="plan-cta">Cotizar</a></div>
-          </div>
-          <div class="service-card fade-up" style="transition-delay:0.2s">
-            <p class="service-name" data-i18n="sv7-name">Automatización de inventario con IA</p>
-            <div class="service-price"><sup>$</sup>600</div>
-            <p class="service-period" data-i18n="sv7-period">Pago único · incluye capacitación</p>
-            <p class="service-desc" data-i18n="sv7-desc">Setup completo, integración con tus sistemas actuales y capacitación de tu equipo para operar con IA.</p>
-            <div class="service-cta"><a href="#contacto" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="plan-cta">Cotizar</a></div>
-          </div>
+        <div class="service-card fade-up" style="transition-delay:0.2s; grid-column: span 2;" id="addon-card">
+          <div class="plan-name" style="font-size:11px;color:var(--blue);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px" data-i18n="addon_label">ADD-ON</div>
+          <div class="service-card-name" data-i18n="svc3_3_name">Diagnóstico comercial</div>
+          <div class="service-card-price">$200</div>
+          <div class="service-card-desc" data-i18n="svc3_3_desc">Sesión presencial de 2 horas para analizar tu negocio, identificar oportunidades de contenido y definir el plan de acción.</div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- DIFERENCIADOR -->
-  <section id="diferenciador">
-    <div class="container">
-      <div class="fade-up">
-        <h2 class="dif-h2" data-i18n="dif-h2">Resultados medibles o no tiene sentido.</h2>
-        <p class="dif-p" data-i18n="dif-p">No cobramos por bonito. Cada dólar que inviertes en Sinergi está amarrado a una métrica de negocio: más visitas, más consultas, más ventas. Lo sabemos porque lo aplicamos primero en nuestras propias empresas.</p>
-        <a href="#contacto" class="btn btn-outline btn-lg" data-i18n="dif-cta">Empecemos</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <div class="container">
-      <div class="contacto-inner">
-        <div class="fade-up">
-          <p class="eyebrow" data-i18n="cont-eyebrow">Contacto</p>
-          <h2 class="section-h2" data-i18n="cont-h2">Empecemos a trabajar.</h2>
-          <p class="section-p" data-i18n="cont-sub">Respondemos en menos de 24 horas.</p>
-          <div class="contacto-btns">
-            <a href="https://wa.me/50370000000" target="_blank" rel="noopener" class="btn btn-green btn-lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp
-            </a>
-            <a href="mailto:sinergielsalvador@gmail.com" class="btn btn-primary btn-lg">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-              Email
-            </a>
-          </div>
+    <!-- TAB 4 -->
+    <div class="tab-panel" id="tab-3">
+      <p class="tab-desc" data-i18n="tab4_desc">Soluciones digitales completas para empresas que quieren operar con tecnología de punta.</p>
+      <div class="services-2col">
+        <div class="service-card fade-up">
+          <div class="service-card-name" data-i18n="svc4_1_name">Branding completo</div>
+          <div class="service-card-price">$600 <span style="font-size:14px;font-weight:400;color:var(--text-secondary)" data-i18n="once">pago único</span></div>
+          <div class="service-card-desc" data-i18n="svc4_1_desc">Identidad visual completa: logo, paleta, tipografía, guía de marca y aplicaciones básicas.</div>
         </div>
-        <div class="fade-up" style="transition-delay:0.1s">
-          <form id="contactForm" novalidate>
-            <div class="form-group">
-              <label class="form-label" for="nombre" data-i18n="form-nombre">Nombre</label>
-              <input class="form-input" id="nombre" type="text" required placeholder="Tu nombre" data-i18n-ph="ph-nombre" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="empresa" data-i18n="form-empresa">Empresa</label>
-              <input class="form-input" id="empresa" type="text" placeholder="Tu empresa" data-i18n-ph="ph-empresa" />
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="servicio" data-i18n="form-servicio">Servicio de interés</label>
-              <select class="form-select" id="servicio">
-                <option value="" data-i18n="form-select-default">Selecciona un servicio</option>
-                <optgroup label="Contenido Orgánico">
-                  <option value="arranque" data-i18n="form-opt1">Plan Arranque · $300/mes</option>
-                  <option value="crecimiento" data-i18n="form-opt2">Plan Crecimiento · $600/mes</option>
-                  <option value="dominancia" data-i18n="form-opt3">Plan Dominancia · $900/mes</option>
-                </optgroup>
-                <optgroup label="Producción Audiovisual">
-                  <option value="video-creadores" data-i18n="form-opt4">Video para creadores/influencers</option>
-                  <option value="podcast" data-i18n="form-opt5">Producción de podcast</option>
-                  <option value="tiktok-live" data-i18n="form-opt6">TikTok Live Commerce</option>
-                </optgroup>
-                <optgroup label="Formación & Talleres">
-                  <option value="taller" data-i18n="form-opt7">Taller intensivo de contenido</option>
-                  <option value="programa" data-i18n="form-opt7b">Programa de formación de equipo</option>
-                  <option value="diagnostico" data-i18n="form-opt11">Diagnóstico comercial</option>
-                </optgroup>
-                <optgroup label="Implementación Digital">
-                  <option value="branding" data-i18n="form-opt8">Branding completo</option>
-                  <option value="web" data-i18n="form-opt9">Página web con cobros</option>
-                  <option value="ia-inventario" data-i18n="form-opt10">Automatización con IA</option>
-                </optgroup>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="mensaje" data-i18n="form-mensaje">Mensaje</label>
-              <textarea class="form-textarea" id="mensaje" placeholder="Cuéntanos sobre tu proyecto..." data-i18n-ph="ph-mensaje"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center" data-i18n="form-submit">Enviar mensaje</button>
-          </form>
-          <div class="form-success" id="formSuccess">
-            <div class="form-success-icon">✓</div>
-            <p data-i18n="form-success">¡Mensaje recibido! Te respondemos en menos de 24 horas.</p>
-          </div>
+        <div class="service-card featured fade-up" style="transition-delay:0.1s">
+          <div class="plan-badge" data-i18n="badge_popular">Más popular</div>
+          <div class="service-card-name" data-i18n="svc4_2_name">Página web con cobros integrados</div>
+          <div class="service-card-price">$1,200 <span style="font-size:14px;font-weight:400;color:var(--text-secondary)" data-i18n="once">pago único</span></div>
+          <div class="service-card-desc" data-i18n="svc4_2_desc">Sitio web profesional con pasarela de pagos integrada, optimizado para conversión y con panel de gestión.</div>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.2s; grid-column: span 2;">
+          <div class="service-card-name" data-i18n="svc4_3_name">Automatización de inventario con IA</div>
+          <div class="service-card-price">$600 <span style="font-size:14px;font-weight:400;color:var(--text-secondary)" data-i18n="once">pago único</span></div>
+          <div class="service-card-desc" data-i18n="svc4_3_desc">Sistema de gestión de inventario automatizado con inteligencia artificial para reducir errores y ahorrar tiempo operativo.</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
+<!-- ─── DIFERENCIADOR ─── -->
+<section id="diferenciador">
+  <div class="container fade-up">
+    <h2 data-i18n="dif_h2">Resultados medibles o no tiene sentido.</h2>
+    <p data-i18n="dif_p">En Sinergi no aplicamos estrategias sin antes probarlas en nuestras propias empresas. Si un formato de contenido no vende ahí, no te lo vendemos a ti. Ese es nuestro estándar: prueba real antes de promesa.</p>
+    <a href="#contacto" class="btn btn-outline-white" data-i18n="dif_cta">Empecemos</a>
+  </div>
+</section>
+
+<!-- ─── CONTACTO ─── -->
+<section id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left fade-up">
+        <div class="section-tag" data-i18n="contact_tag">Contacto</div>
+        <h2 data-i18n="contact_h2">Empecemos a trabajar.</h2>
+        <p data-i18n="contact_sub">Respondemos en menos de 24 horas.</p>
+        <div class="contact-buttons">
+          <a href="https://wa.me/50300000000" class="contact-btn contact-btn-wa" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.854L.054 23.509a.5.5 0 00.612.612l5.655-1.479A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.5-5.197-1.375l-.373-.217-3.853 1.007 1.007-3.854-.217-.372A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
+          <a href="mailto:sinergielsalvador@gmail.com" class="contact-btn contact-btn-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            sinergielsalvador@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap fade-up" style="transition-delay:0.1s">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="fname" data-i18n="form_name">Nombre</label>
+            <input type="text" id="fname" name="nombre" placeholder="Tu nombre" required data-i18n-placeholder="form_name_ph" />
+          </div>
+          <div class="form-group">
+            <label for="fempresa" data-i18n="form_empresa">Empresa</label>
+            <input type="text" id="fempresa" name="empresa" placeholder="Nombre de tu empresa" data-i18n-placeholder="form_empresa_ph" />
+          </div>
+          <div class="form-group">
+            <label for="fservicio" data-i18n="form_servicio">Servicio de interés</label>
+            <select id="fservicio" name="servicio" required>
+              <option value="" data-i18n="form_servicio_ph">Selecciona un servicio</option>
+              <optgroup label="📲 Contenido Orgánico">
+                <option value="arranque" data-i18n="form_opt1">Plan Arranque · $300/mes</option>
+                <option value="crecimiento" data-i18n="form_opt2">Plan Crecimiento · $600/mes</option>
+                <option value="dominancia" data-i18n="form_opt3">Plan Dominancia · $900/mes</option>
+              </optgroup>
+              <optgroup label="🎬 Producción Audiovisual">
+                <option value="video-creador" data-i18n="form_opt4">Video para creadores</option>
+                <option value="podcast" data-i18n="form_opt5">Producción de podcast</option>
+                <option value="live-commerce" data-i18n="form_opt6">TikTok Live Commerce</option>
+              </optgroup>
+              <optgroup label="🏫 Formación &amp; Talleres">
+                <option value="taller" data-i18n="form_opt7">Taller intensivo · $350</option>
+                <option value="programa" data-i18n="form_opt8">Programa de equipo · $800</option>
+                <option value="diagnostico" data-i18n="form_opt9">Diagnóstico comercial · $200</option>
+              </optgroup>
+              <optgroup label="⚙️ Implementación Digital">
+                <option value="branding" data-i18n="form_opt10">Branding completo · $600</option>
+                <option value="web" data-i18n="form_opt11">Página web · $1,200</option>
+                <option value="automatizacion" data-i18n="form_opt12">Automatización IA · $600</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmensaje" data-i18n="form_mensaje">Mensaje</label>
+            <textarea id="fmensaje" name="mensaje" placeholder="Cuéntanos sobre tu negocio y lo que necesitas." data-i18n-placeholder="form_mensaje_ph"></textarea>
+          </div>
+          <button type="submit" class="btn btn-blue" style="width:100%;justify-content:center" data-i18n="form_submit">Enviar mensaje</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <p data-i18n="form_ok">✓ Mensaje enviado. Te contactaremos pronto.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
     <div class="footer-inner">
-      <a href="#hero"><img src="sinergi_sin_fondo.png" alt="Sinergi" style="height:38px;filter:brightness(0) invert(1);opacity:0.8;" /></a>
-      <p class="footer-copy" data-i18n="footer-copy">Sinergi · Creación de Contenido & Performance · El Salvador · 2025</p>
+      <div class="footer-logo">
+        <img src="sinergi_sin_fondo_transparent.png" alt="Sinergi" />
+      </div>
+      <p class="footer-text" data-i18n="footer_text">Sinergi · Creación de Contenido &amp; Performance · El Salvador · 2025</p>
       <ul class="footer-links">
-        <li><a href="#hero" data-i18n="nav-inicio">Inicio</a></li>
-        <li><a href="#servicios" data-i18n="nav-servicios">Servicios</a></li>
-        <li><a href="#contacto" data-i18n="nav-contacto">Contacto</a></li>
+        <li><a href="#hero" data-i18n="nav_inicio">Inicio</a></li>
+        <li><a href="#services" data-i18n="nav_servicios">Servicios</a></li>
+        <li><a href="#contacto" data-i18n="nav_contacto">Contacto</a></li>
       </ul>
+      <p class="footer-copy" data-i18n="footer_copy">© 2025 Sinergi. Todos los derechos reservados.</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-  const T={es:{'nav-inicio':'Inicio','nav-servicios':'Servicios','nav-contacto':'Contacto','nav-cta':'Hablemos','hero-eyebrow':'Creación de Contenido & Performance · El Salvador','hero-h1a':'No vendemos likes.','hero-h1b':'Construimos facturación.','hero-sub':'Sinergi se asocia con empresas medianas para digitalizar y escalar sus ventas con contenido orgánico real y resultados medibles.','hero-btn1':'Ver servicios','hero-btn2':'Contactar','metric1':'Seguidores TikTok','metric1b':'En nuestras marcas propias','metric2':'Views orgánicos','metric2b':'Sin un solo dólar en pauta','metric3':'Empresas propias creadas','metric3b':'Varias ganadoras de mercado','metric4':'Años de experiencia','metric4b':'Creando negocios digitales','prob-eyebrow':'Por qué importa la diferencia','prob-h2':'No todos los videos son lo mismo.','prob-p':'Hay dos tipos de contenido: el que se ve bonito y el que vende. La mayoría de agencias hace el primero. Nosotros hacemos el segundo.','col-ellos-label':'Video de alta producción','col-ellos-title':'Impresionante por fuera. Silencioso en ventas.','col-ellos-desc':'Las agencias tradicionales invierten en equipos costosos y producción cinematográfica. El resultado se ve impresionante, pero está diseñado para ganar premios, no clientes.','col-ellos-f1':'Requiere presupuesto alto de producción','col-ellos-f2':'Foco en estética, no en conversión','col-ellos-f3':'No aprovecha el algoritmo orgánico','col-ellos-f4':'Ciclos de producción lentos (semanas)','col-ellos-f5':'Métricas de vanidad como entregable','col-nos-label':'Video orgánico · Sinergi','col-nos-title':'Diseñado para generar ventas reales.','col-nos-desc':'Nuestros videos están construidos con la psicología de compra del consumidor digital: ganchos que detienen el scroll, narrativas que generan confianza y llamados a la acción que convierten.','col-nos-f1':'Producción ágil, entrega en días','col-nos-f2':'Guión con estrategia de conversión','col-nos-f3':'Optimizado para algoritmos TikTok/Reels','col-nos-f4':'Métricas atadas a tu facturación','col-nos-f5':'Probado en nuestras propias marcas','prob-b1':'Likes y seguidores','prob-a1':'→ Ventas reales','prob-d1':'Medimos el impacto en facturación, no en corazones rojos.','prob-b2':'Posts bonitos','prob-a2':'→ Contenido que convierte','prob-d2':'Cada video tiene un guión diseñado para mover al cliente a la acción.','prob-b3':'Pauta sin estrategia','prob-a3':'→ Video orgánico que vende solo','prob-d3':'El mejor algoritmo es un video que la gente quiere ver y compartir.','prob-b4':'Agencia genérica','prob-a4':'→ Aliado en tu operación','prob-d4':'Nos integramos contigo. Conocemos tu producto, tu cliente y tu mercado.','serv-eyebrow':'Todo lo que hacemos','serv-h2':'Servicios diseñados para crecer','serv-p':'Elige la categoría que se ajusta a lo que tu negocio necesita ahora.','tab1':'📲 Contenido Orgánico','tab2':'🎬 Producción Audiovisual','tab3':'🏫 Formación & Talleres','tab4':'⚙️ Implementación Digital','cat1-title':'Paquetes de Contenido Orgánico','cat1-desc':'Videos diseñados para detener el scroll, generar confianza y convertir seguidores en compradores. Guión, dirección, edición y estrategia incluidos. Mínimo 3 meses.','cat2-title':'Producción Audiovisual','cat2-desc':'Servicios de grabación y edición profesional para proyectos puntuales: creadores, podcasts y transmisiones en vivo con estrategia de venta.','cat3-title':'Formación & Talleres','cat3-desc':'Capacitamos a tu equipo para que cree contenido que vende, sin depender de una agencia para siempre.','cat4-title':'Implementación Digital','cat4-desc':'Construimos la infraestructura digital que tu negocio necesita para vender y operar mejor.','p1-name':'Plan Arranque','p1-period':'/mes · mín. 3 meses','p1-f1':'4 videos orgánicos TikTok/Reels','p1-f2':'1 sesión de grabación en tu negocio','p1-f3':'Guión, dirección y edición','p1-f4':'Estrategia de publicación','p1-f5':'Reunión mensual 30 min','plan-badge':'Más popular','plan-badge-rec':'Recomendado','plan-badge-pop':'Popular','p2-name':'Plan Crecimiento','p2-period':'/mes · mín. 3 meses','p2-f1':'8 videos orgánicos TikTok/Reels','p2-f2':'1 sesión de grabación en tu negocio','p2-f3':'Guión, dirección y edición','p2-f4':'Estrategia de contenido mensual','p2-f5':'Reporte de métricas mensual','p2-f6':'Reunión mensual 45 min','p3-name':'Plan Dominancia','p3-period':'/mes · mín. 3 meses','p3-f1':'12 videos orgánicos TikTok/Reels','p3-f2':'2 sesiones de grabación en tu negocio','p3-f3':'Guión, dirección y edición','p3-f4':'Estrategia y ángulos de venta','p3-f5':'Reporte quincenal con análisis','p3-f6':'Reunión quincenal 1 hora','plan-cta':'Empezar','addon-text':'¿Sin presentador? Lo llevamos nosotros · +$75/sesión','addon-sub':'— Presentador profesional incluido en tu sesión.','planes-footnote':'Sinergi produce y entrega. El cliente publica y gestiona comentarios.','sv1-name':'Video para creadores / influencers','sv1-period':'por video · pack 3 videos $160','sv1-desc':'Grabamos y editamos tu contenido en eventos, sesiones o locaciones. Entrega en 48 hrs.','sv2-name':'Producción de podcast','sv2-period':'por episodio','sv2-desc':'Grabación, edición de audio y video, thumbnail y entrega lista para publicar en cualquier plataforma.','sv3-name':'TikTok Live Commerce','sv3-period':'Nivel 1 desde cero · Nivel 2 conversión $250','sv3-desc':'Capacitación presencial para vender en vivo con estrategia probada. Máx. 3 personas por sesión.','sv4a-name':'Taller intensivo de contenido','sv4a-period':'Sesión presencial · hasta 5 personas','sv4a-desc':'Un día completo de formación práctica: cómo grabar, estructurar guiones y publicar contenido que convierte.','sv4b-name':'Programa de formación de equipo','sv4b-period':'Programa completo · 4-6 semanas','sv4b-desc':'Formación progresiva para que tu equipo domine la creación de contenido orgánico de inicio a fin.','sv4b-f1':'Estrategia de contenido para tu industria','sv4b-f2':'Producción y guiones de conversión','sv4b-f3':'Calendario editorial 30 días','sv4b-f4':'Sesión de seguimiento al mes','diag-addon':'Diagnóstico comercial · $200','diag-addon-sub':'— Sesión presencial 2 horas. Identificamos tus 3 problemas y te damos 3 acciones concretas.','sv5-name':'Branding completo','sv5-period':'Pago único','sv5-desc':'Logo, paleta de colores, tipografía, manual de marca y kit completo para redes sociales.','sv6-name':'Página web con cobros integrados','sv6-period':'Pago único · incluye capacitación','sv6-desc':'Diseño, desarrollo, integración de cobros con tarjeta y capacitación para que la administres tú mismo.','sv6-f1':'Diseño personalizado a tu marca','sv6-f2':'Cobros con tarjeta automáticos','sv6-f3':'SEO básico incluido','sv6-f4':'Capacitación 2 horas','sv7-name':'Automatización de inventario con IA','sv7-period':'Pago único · incluye capacitación','sv7-desc':'Setup completo, integración con tus sistemas actuales y capacitación de tu equipo para operar con IA.','dif-h2':'Resultados medibles o no tiene sentido.','dif-p':'No cobramos por bonito. Cada dólar que inviertes en Sinergi está amarrado a una métrica de negocio: más visitas, más consultas, más ventas. Lo sabemos porque lo aplicamos primero en nuestras propias empresas.','dif-cta':'Empecemos','cont-eyebrow':'Contacto','cont-h2':'Empecemos a trabajar.','cont-sub':'Respondemos en menos de 24 horas.','form-nombre':'Nombre','form-empresa':'Empresa','form-servicio':'Servicio de interés','form-select-default':'Selecciona un servicio','form-opt1':'Plan Arranque · $300/mes','form-opt2':'Plan Crecimiento · $600/mes','form-opt3':'Plan Dominancia · $900/mes','form-opt4':'Video para creadores/influencers','form-opt5':'Producción de podcast','form-opt6':'TikTok Live Commerce','form-opt7':'Taller intensivo de contenido','form-opt7b':'Programa de formación de equipo','form-opt11':'Diagnóstico comercial','form-opt8':'Branding completo','form-opt9':'Página web con cobros','form-opt10':'Automatización con IA','form-mensaje':'Mensaje','form-submit':'Enviar mensaje','form-success':'¡Mensaje recibido! Te respondemos en menos de 24 horas.','footer-copy':'Sinergi · Creación de Contenido & Performance · El Salvador · 2025','ph-nombre':'Tu nombre','ph-empresa':'Tu empresa','ph-mensaje':'Cuéntanos sobre tu proyecto...'},en:{'nav-inicio':'Home','nav-servicios':'Services','nav-contacto':'Contact','nav-cta':"Let's Talk",'hero-eyebrow':'Content Creation & Performance · El Salvador','hero-h1a':"We don't sell likes.",'hero-h1b':'We build revenue.','hero-sub':'Sinergi partners with mid-sized businesses to digitize and scale their sales through real organic content and measurable results.','hero-btn1':'View services','hero-btn2':'Contact us','metric1':'TikTok Followers','metric1b':'Across our own brands','metric2':'Organic views','metric2b':'Without a single dollar in ads','metric3':'Own companies built','metric3b':'Several market winners','metric4':'Years of experience','metric4b':'Building digital businesses','prob-eyebrow':'Why the difference matters','prob-h2':'Not all videos are the same.','prob-p':"There are two types of content: the kind that looks good and the kind that sells. Most agencies make the first. We make the second.",'col-ellos-label':'High-production video','col-ellos-title':'Impressive to look at. Silent on sales.','col-ellos-desc':"Traditional agencies invest in expensive equipment and cinematic production. The result looks impressive, but it's designed to win awards, not customers.",'col-ellos-f1':'Requires high production budget','col-ellos-f2':'Focus on aesthetics, not conversion','col-ellos-f3':'Does not leverage organic algorithm','col-ellos-f4':'Slow production cycles (weeks)','col-ellos-f5':'Vanity metrics as the deliverable','col-nos-label':'Organic video · Sinergi','col-nos-title':'Designed to generate real sales.','col-nos-desc':"Our videos are built with the buying psychology of the digital consumer: hooks that stop the scroll, narratives that build trust, and calls to action that convert.",'col-nos-f1':'Agile production, delivery in days','col-nos-f2':'Script with conversion strategy','col-nos-f3':'Optimized for TikTok/Reels algorithms','col-nos-f4':'Metrics tied to your revenue','col-nos-f5':'Proven first in our own brands','prob-b1':'Likes and followers','prob-a1':'→ Real sales','prob-d1':'We measure impact in revenue, not red hearts.','prob-b2':'Pretty posts','prob-a2':'→ Content that converts','prob-d2':'Every video has a script designed to move the customer to action.','prob-b3':'Ads without strategy','prob-a3':'→ Organic video that sells itself','prob-d3':"The best algorithm is a video people want to watch and share.",'prob-b4':'Generic agency','prob-a4':'→ Ally in your operation','prob-d4':'We integrate with you. We know your product, your customer and your market.','serv-eyebrow':'Everything we do','serv-h2':'Services designed to grow','serv-p':'Choose the category that fits what your business needs right now.','tab1':'📲 Organic Content','tab2':'🎬 Audiovisual Production','tab3':'🏫 Training & Workshops','tab4':'⚙️ Digital Implementation','cat1-title':'Organic Content Packages','cat1-desc':'Videos designed to stop the scroll, build trust and convert followers into buyers. Script, direction, editing and strategy included. Minimum 3 months.','cat2-title':'Audiovisual Production','cat2-desc':'Professional recording and editing services for one-time projects: creators, podcasts and live streams with sales strategy.','cat3-title':'Training & Workshops','cat3-desc':"We train your team to create content that sells, without depending on an agency forever.",'cat4-title':'Digital Implementation','cat4-desc':'We build the digital infrastructure your business needs to sell and operate better.','p1-name':'Starter Plan','p1-period':'/mo · min. 3 months','p1-f1':'4 organic TikTok/Reels videos','p1-f2':'1 filming session at your business','p1-f3':'Script, direction & editing','p1-f4':'Publishing strategy','p1-f5':'Monthly meeting 30 min','plan-badge':'Most popular','plan-badge-rec':'Recommended','plan-badge-pop':'Popular','p2-name':'Growth Plan','p2-period':'/mo · min. 3 months','p2-f1':'8 organic TikTok/Reels videos','p2-f2':'1 filming session at your business','p2-f3':'Script, direction & editing','p2-f4':'Monthly content strategy','p2-f5':'Monthly metrics report','p2-f6':'Monthly meeting 45 min','p3-name':'Dominance Plan','p3-period':'/mo · min. 3 months','p3-f1':'12 organic TikTok/Reels videos','p3-f2':'2 filming sessions at your business','p3-f3':'Script, direction & editing','p3-f4':'Strategy & sales angles','p3-f5':'Bi-weekly report with analysis','p3-f6':'Bi-weekly meeting 1 hour','plan-cta':'Get started','addon-text':'No presenter? We bring one · +$75/session','addon-sub':'— Professional presenter included in your session.','planes-footnote':'Sinergi produces and delivers. The client publishes and manages comments.','sv1-name':'Video for creators / influencers','sv1-period':'per video · 3-video pack $160','sv1-desc':'We film and edit your content at events, sessions or locations. Delivery in 48 hrs.','sv2-name':'Podcast production','sv2-period':'per episode','sv2-desc':'Recording, audio and video editing, thumbnail and delivery ready to publish on any platform.','sv3-name':'TikTok Live Commerce','sv3-period':'Level 1 from scratch · Level 2 conversion $250','sv3-desc':'In-person training to sell live with proven strategy. Max. 3 people per session.','sv4a-name':'Content intensive workshop','sv4a-period':'In-person session · up to 5 people','sv4a-desc':'A full day of hands-on training: how to film, structure scripts and publish content that converts.','sv4b-name':'Team training program','sv4b-period':'Full program · 4-6 weeks','sv4b-desc':'Progressive training for your team to master organic content creation from start to finish.','sv4b-f1':'Content strategy for your industry','sv4b-f2':'Production & conversion scripts','sv4b-f3':'30-day editorial calendar','sv4b-f4':'Monthly follow-up session','diag-addon':'Commercial diagnosis · $200','diag-addon-sub':'— 2-hour in-person session. We identify your 3 problems and give you 3 concrete actions.','sv5-name':'Complete branding','sv5-period':'One-time payment','sv5-desc':'Logo, color palette, typography, brand manual and complete social media kit.','sv6-name':'Website with integrated payments','sv6-period':'One-time · includes training','sv6-desc':'Design, development, card payment integration and training so you can manage it yourself.','sv6-f1':'Custom design for your brand','sv6-f2':'Automatic card payments','sv6-f3':'Basic SEO included','sv6-f4':'2-hour training','sv7-name':'AI inventory automation','sv7-period':'One-time · includes training','sv7-desc':'Full setup, integration with your current systems and team training to operate with AI.','dif-h2':'Measurable results or it makes no sense.','dif-p':"We don't charge for pretty. Every dollar you invest in Sinergi is tied to a business metric: more visits, more inquiries, more sales. We know because we applied it first in our own companies.",'dif-cta':"Let's start",'cont-eyebrow':'Contact','cont-h2':"Let's start working.",'cont-sub':'We respond in less than 24 hours.','form-nombre':'Name','form-empresa':'Company','form-servicio':'Service of interest','form-select-default':'Select a service','form-opt1':'Starter Plan · $300/mo','form-opt2':'Growth Plan · $600/mo','form-opt3':'Dominance Plan · $900/mo','form-opt4':'Video for creators/influencers','form-opt5':'Podcast production','form-opt6':'TikTok Live Commerce','form-opt7':'Content intensive workshop','form-opt7b':'Team training program','form-opt11':'Commercial diagnosis','form-opt8':'Complete branding','form-opt9':'Website with payments','form-opt10':'AI automation','form-mensaje':'Message','form-submit':'Send message','form-success':"Message received! We'll reply within 24 hours.",'footer-copy':'Sinergi · Content Creation & Performance · El Salvador · 2025','ph-nombre':'Your name','ph-empresa':'Your company','ph-mensaje':'Tell us about your project...'}};
+<script>
+// ─── i18n ───
+const translations = {
+  es: {
+    nav_inicio: 'Inicio', nav_servicios: 'Servicios', nav_contacto: 'Contacto', nav_cta: 'Hablemos',
+    hero_eyebrow: 'Creación de Contenido & Performance · El Salvador',
+    hero_h1_1: 'No vendemos likes.', hero_h1_2: 'Construimos facturación.',
+    hero_sub: 'Sinergi se asocia con empresas medianas para digitalizar y escalar sus ventas con contenido orgánico real y resultados medibles.',
+    hero_btn1: 'Ver servicios', hero_btn2: 'Contactar',
+    num1_label: 'Seguidores TikTok', num1_sub: 'En nuestras marcas propias',
+    num2_label: 'Views orgánicos', num2_sub: 'Sin un solo dólar en pauta',
+    num3_label: 'Empresas propias creadas', num3_sub: 'Varias ganadoras de mercado',
+    num4_label: 'Años de experiencia', num4_sub: 'Creando negocios digitales',
+    why_tag: 'Por qué importa la diferencia', why_h2: 'No todos los videos son lo mismo.',
+    why_sub: 'Existe una diferencia enorme entre un video que impresiona y un video que vende. La mayoría de las agencias producen el primero. Sinergi construye el segundo.',
+    why_left_eyebrow: 'Video de alta producción', why_left_title: 'Impresionante por fuera. Silencioso en ventas.',
+    why_left_desc: 'Las agencias tradicionales invierten en producción cinematográfica que se ve bien pero no genera clientes reales ni conversiones medibles.',
+    why_left_1: 'Presupuesto alto en producción, ROI bajo', why_left_2: 'Estética genérica sin diferenciación',
+    why_left_3: 'Sin estrategia de conversión detrás', why_left_4: 'Resultados difíciles de medir',
+    why_left_5: 'Dependencia de pauta pagada para visibilidad',
+    why_right_eyebrow: 'Video orgánico · Sinergi', why_right_title: 'Diseñado para generar ventas reales.',
+    why_right_desc: 'Videos construidos con psicología de compra digital, probados en nuestras propias empresas antes de aplicarlos a las tuyas.',
+    why_right_1: 'Contenido que genera ventas directas', why_right_2: 'Estrategia basada en datos reales',
+    why_right_3: 'Probado en empresas propias primero', why_right_4: 'Métricas claras de rendimiento',
+    why_right_5: 'Alcance orgánico sin depender de pauta',
+    ba1_before: 'Likes y seguidores', ba1_after: 'Ventas reales',
+    ba2_before: 'Posts bonitos', ba2_after: 'Contenido que convierte',
+    ba3_before: 'Pauta sin estrategia', ba3_after: 'Video orgánico que vende solo',
+    ba4_before: 'Agencia genérica', ba4_after: 'Aliado en tu operación',
+    svc_tag: 'Todo lo que hacemos', svc_h2: 'Servicios diseñados para crecer',
+    svc_sub: 'Elige la categoría que se ajusta a lo que tu negocio necesita ahora.',
+    tab1: '📲 Contenido Orgánico', tab2: '🎬 Producción Audiovisual', tab3: '🏫 Formación & Talleres', tab4: '⚙️ Implementación Digital',
+    tab1_desc: 'Videos diseñados para detener el scroll, generar confianza y convertir seguidores en compradores. Mínimo 3 meses.',
+    plan1_name: 'Plan Arranque', plan2_name: 'Plan Crecimiento', plan3_name: 'Plan Dominancia',
+    plan_month: '/mes', badge_popular: 'Más popular',
+    p1_1: '4 videos orgánicos TikTok/Reels', p1_2: '1 sesión de grabación en tu negocio', p1_3: 'Guión, dirección y edición', p1_4: 'Estrategia de publicación', p1_5: 'Reunión mensual 30 min',
+    p2_1: '8 videos orgánicos TikTok/Reels', p2_2: '1 sesión de grabación en tu negocio', p2_3: 'Guión, dirección y edición', p2_4: 'Estrategia de contenido mensual', p2_5: 'Reporte de métricas mensual', p2_6: 'Reunión mensual 45 min',
+    p3_1: '12 videos orgánicos TikTok/Reels', p3_2: '2 sesiones de grabación en tu negocio', p3_3: 'Guión, dirección y edición', p3_4: 'Estrategia y ángulos de venta', p3_5: 'Reporte quincenal con análisis', p3_6: 'Reunión quincenal 1 hora',
+    tab1_note: 'Sinergi produce y entrega. El cliente publica y gestiona comentarios.',
+    tab1_addon: '¿Sin presentador? Lo llevamos nosotros · +$75/sesión',
+    tab2_desc: 'Producción profesional para creadores, influencers y marcas que necesitan contenido de alto impacto.',
+    svc2_1_name: 'Video para creadores / influencers', svc2_1_price2: '· 3 videos $160', svc2_1_desc: 'Producción individual o en paquete para creadores que necesitan contenido frecuente y de calidad.',
+    svc2_2_name: 'Producción de podcast', svc2_2_price2: 'por episodio', svc2_2_desc: 'Grabación, edición y entrega de tu episodio listo para publicar en todas las plataformas.',
+    svc2_3_name: 'TikTok Live Commerce — Nivel 1', svc2_3_desc: 'Estrategia y ejecución de transmisión en vivo para vender en tiempo real con nuestra metodología probada.',
+    svc2_4_name: 'TikTok Live Commerce — Nivel 2', svc2_4_desc: 'Modalidad complementaria de Live Commerce para marcas que ya operan en la plataforma.',
+    tab3_desc: 'Talleres y programas para equipos que quieren crear contenido efectivo de forma interna.',
+    svc3_1_name: 'Taller intensivo de contenido', svc3_1_desc: 'Sesión presencial de alto impacto, hasta 5 personas. Metodología, práctica y estrategia en un solo día.',
+    svc3_2_name: 'Programa de formación de equipo', svc3_2_desc: 'Programa de 4 a 6 semanas para equipos que quieren dominar la creación de contenido orgánico internamente.',
+    addon_label: 'ADD-ON', svc3_3_name: 'Diagnóstico comercial', svc3_3_desc: 'Sesión presencial de 2 horas para analizar tu negocio, identificar oportunidades de contenido y definir el plan de acción.',
+    tab4_desc: 'Soluciones digitales completas para empresas que quieren operar con tecnología de punta.',
+    svc4_1_name: 'Branding completo', once: 'pago único', svc4_1_desc: 'Identidad visual completa: logo, paleta, tipografía, guía de marca y aplicaciones básicas.',
+    svc4_2_name: 'Página web con cobros integrados', svc4_2_desc: 'Sitio web profesional con pasarela de pagos integrada, optimizado para conversión y con panel de gestión.',
+    svc4_3_name: 'Automatización de inventario con IA', svc4_3_desc: 'Sistema de gestión de inventario automatizado con inteligencia artificial para reducir errores y ahorrar tiempo operativo.',
+    dif_h2: 'Resultados medibles o no tiene sentido.',
+    dif_p: 'En Sinergi no aplicamos estrategias sin antes probarlas en nuestras propias empresas. Si un formato de contenido no vende ahí, no te lo vendemos a ti. Ese es nuestro estándar: prueba real antes de promesa.',
+    dif_cta: 'Empecemos',
+    contact_tag: 'Contacto', contact_h2: 'Empecemos a trabajar.', contact_sub: 'Respondemos en menos de 24 horas.',
+    form_name: 'Nombre', form_name_ph: 'Tu nombre', form_empresa: 'Empresa', form_empresa_ph: 'Nombre de tu empresa',
+    form_servicio: 'Servicio de interés', form_servicio_ph: 'Selecciona un servicio', form_mensaje: 'Mensaje',
+    form_mensaje_ph: 'Cuéntanos sobre tu negocio y lo que necesitas.',
+    form_submit: 'Enviar mensaje', form_ok: '✓ Mensaje enviado. Te contactaremos pronto.',
+    form_opt1: 'Plan Arranque · $300/mes', form_opt2: 'Plan Crecimiento · $600/mes', form_opt3: 'Plan Dominancia · $900/mes',
+    form_opt4: 'Video para creadores', form_opt5: 'Producción de podcast', form_opt6: 'TikTok Live Commerce',
+    form_opt7: 'Taller intensivo · $350', form_opt8: 'Programa de equipo · $800', form_opt9: 'Diagnóstico comercial · $200',
+    form_opt10: 'Branding completo · $600', form_opt11: 'Página web · $1,200', form_opt12: 'Automatización IA · $600',
+    footer_text: 'Sinergi · Creación de Contenido & Performance · El Salvador · 2025',
+    footer_copy: '© 2025 Sinergi. Todos los derechos reservados.'
+  },
+  en: {
+    nav_inicio: 'Home', nav_servicios: 'Services', nav_contacto: 'Contact', nav_cta: "Let's talk",
+    hero_eyebrow: 'Content Creation & Performance · El Salvador',
+    hero_h1_1: "We don't sell likes.", hero_h1_2: 'We build revenue.',
+    hero_sub: 'Sinergi partners with mid-sized businesses to digitize and scale their sales with real organic content and measurable results.',
+    hero_btn1: 'View services', hero_btn2: 'Contact us',
+    num1_label: 'TikTok Followers', num1_sub: 'On our own brands',
+    num2_label: 'Organic views', num2_sub: 'Without a single dollar in ads',
+    num3_label: 'Own companies built', num3_sub: 'Several market winners',
+    num4_label: 'Years of experience', num4_sub: 'Building digital businesses',
+    why_tag: 'Why the difference matters', why_h2: 'Not all videos are the same.',
+    why_sub: 'There is a huge difference between a video that impresses and a video that sells. Most agencies produce the first. Sinergi builds the second.',
+    why_left_eyebrow: 'High production video', why_left_title: 'Impressive on the outside. Silent in sales.',
+    why_left_desc: 'Traditional agencies invest in cinematic production that looks good but does not generate real clients or measurable conversions.',
+    why_left_1: 'High production budget, low ROI', why_left_2: 'Generic aesthetic without differentiation',
+    why_left_3: 'No conversion strategy behind it', why_left_4: 'Hard to measure results',
+    why_left_5: 'Dependent on paid ads for visibility',
+    why_right_eyebrow: 'Organic video · Sinergi', why_right_title: 'Designed to generate real sales.',
+    why_right_desc: 'Videos built with digital buying psychology, tested in our own companies before applying them to yours.',
+    why_right_1: 'Content that drives direct sales', why_right_2: 'Strategy based on real data',
+    why_right_3: 'Tested in our own companies first', why_right_4: 'Clear performance metrics',
+    why_right_5: 'Organic reach without relying on ads',
+    ba1_before: 'Likes and followers', ba1_after: 'Real sales',
+    ba2_before: 'Pretty posts', ba2_after: 'Content that converts',
+    ba3_before: 'Ads without strategy', ba3_after: 'Organic video that sells itself',
+    ba4_before: 'Generic agency', ba4_after: 'Ally in your operation',
+    svc_tag: 'Everything we do', svc_h2: 'Services designed to grow',
+    svc_sub: 'Choose the category that fits what your business needs right now.',
+    tab1: '📲 Organic Content', tab2: '🎬 Audiovisual Production', tab3: '🏫 Training & Workshops', tab4: '⚙️ Digital Implementation',
+    tab1_desc: 'Videos designed to stop the scroll, build trust and turn followers into buyers. Minimum 3 months.',
+    plan1_name: 'Starter Plan', plan2_name: 'Growth Plan', plan3_name: 'Dominance Plan',
+    plan_month: '/month', badge_popular: 'Most popular',
+    p1_1: '4 organic TikTok/Reels videos', p1_2: '1 recording session at your business', p1_3: 'Script, direction and editing', p1_4: 'Publishing strategy', p1_5: 'Monthly 30-min meeting',
+    p2_1: '8 organic TikTok/Reels videos', p2_2: '1 recording session at your business', p2_3: 'Script, direction and editing', p2_4: 'Monthly content strategy', p2_5: 'Monthly metrics report', p2_6: 'Monthly 45-min meeting',
+    p3_1: '12 organic TikTok/Reels videos', p3_2: '2 recording sessions at your business', p3_3: 'Script, direction and editing', p3_4: 'Sales strategy and angles', p3_5: 'Bi-weekly report with analysis', p3_6: 'Bi-weekly 1-hour meeting',
+    tab1_note: 'Sinergi produces and delivers. The client publishes and manages comments.',
+    tab1_addon: 'No host? We bring one · +$75/session',
+    tab2_desc: 'Professional production for creators, influencers and brands that need high-impact content.',
+    svc2_1_name: 'Video for creators / influencers', svc2_1_price2: '· 3 videos $160', svc2_1_desc: 'Individual or packaged production for creators who need frequent, quality content.',
+    svc2_2_name: 'Podcast production', svc2_2_price2: 'per episode', svc2_2_desc: 'Recording, editing and delivery of your episode ready to publish on all platforms.',
+    svc2_3_name: 'TikTok Live Commerce — Level 1', svc2_3_desc: 'Live stream strategy and execution to sell in real time with our proven methodology.',
+    svc2_4_name: 'TikTok Live Commerce — Level 2', svc2_4_desc: 'Complementary Live Commerce mode for brands already operating on the platform.',
+    tab3_desc: 'Workshops and programs for teams that want to create effective content internally.',
+    svc3_1_name: 'Intensive content workshop', svc3_1_desc: 'High-impact in-person session, up to 5 people. Methodology, practice and strategy in one day.',
+    svc3_2_name: 'Team training program', svc3_2_desc: '4 to 6 week program for teams that want to master organic content creation internally.',
+    addon_label: 'ADD-ON', svc3_3_name: 'Commercial diagnosis', svc3_3_desc: '2-hour in-person session to analyze your business, identify content opportunities and define an action plan.',
+    tab4_desc: 'Complete digital solutions for companies that want to operate with cutting-edge technology.',
+    svc4_1_name: 'Complete branding', once: 'one-time payment', svc4_1_desc: 'Full visual identity: logo, palette, typography, brand guide and basic applications.',
+    svc4_2_name: 'Website with integrated payments', svc4_2_desc: 'Professional website with integrated payment gateway, optimized for conversion with a management panel.',
+    svc4_3_name: 'AI inventory automation', svc4_3_desc: 'Automated inventory management system with artificial intelligence to reduce errors and save operational time.',
+    dif_h2: 'Measurable results or it makes no sense.',
+    dif_p: "At Sinergi we don't apply strategies without first testing them in our own companies. If a content format doesn't sell there, we don't sell it to you. That's our standard: real proof before promises.",
+    dif_cta: "Let's start",
+    contact_tag: 'Contact', contact_h2: "Let's start working.", contact_sub: 'We respond in less than 24 hours.',
+    form_name: 'Name', form_name_ph: 'Your name', form_empresa: 'Company', form_empresa_ph: 'Your company name',
+    form_servicio: 'Service of interest', form_servicio_ph: 'Select a service', form_mensaje: 'Message',
+    form_mensaje_ph: 'Tell us about your business and what you need.',
+    form_submit: 'Send message', form_ok: '✓ Message sent. We will contact you soon.',
+    form_opt1: 'Starter Plan · $300/month', form_opt2: 'Growth Plan · $600/month', form_opt3: 'Dominance Plan · $900/month',
+    form_opt4: 'Video for creators', form_opt5: 'Podcast production', form_opt6: 'TikTok Live Commerce',
+    form_opt7: 'Intensive workshop · $350', form_opt8: 'Team program · $800', form_opt9: 'Commercial diagnosis · $200',
+    form_opt10: 'Complete branding · $600', form_opt11: 'Website · $1,200', form_opt12: 'AI Automation · $600',
+    footer_text: 'Sinergi · Content Creation & Performance · El Salvador · 2025',
+    footer_copy: '© 2025 Sinergi. All rights reserved.'
+  }
+};
 
-  let lang=localStorage.getItem('sinergi-lang')||'es';
-  function applyLang(l){lang=l;localStorage.setItem('sinergi-lang',l);document.documentElement.lang=l;const t=T[l];document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k]!==undefined)el.textContent=t[k];});document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.getAttribute('data-i18n-ph');if(t[k]!==undefined)el.placeholder=t[k];});const h1b=document.querySelector('.hero-h1b');if(h1b&&t['hero-h1b']){const w=t['hero-h1b'].split(' ');const last=w.pop();h1b.innerHTML=(w.length?w.join(' ')+' ':'')+`<span style="color:var(--blue)">${last}</span>`;}document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.getAttribute('data-lang')===l));}
-  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>applyLang(b.getAttribute('data-lang'))));
-  applyLang(lang);
+let currentLang = localStorage.getItem('sinergi_lang') || 'es';
 
-  const navbar=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('sinergi_lang', lang);
+  document.documentElement.lang = lang;
+  // Update all text nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang][key]) el.placeholder = translations[lang][key];
+  });
+  // Update counters suffix
+  updateCounterSuffix();
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+  });
+}
 
-  const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu');
-  hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileMenu.classList.toggle('open');});
-  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hamburger.classList.remove('open');mobileMenu.classList.remove('open');}));
+function updateCounterSuffix() {
+  const counters = document.querySelectorAll('[data-count]');
+  counters.forEach(el => {
+    const count = parseInt(el.getAttribute('data-count'));
+    el.textContent = count + 'K+';
+    if (el.closest('.number-item') && el.closest('.number-item').querySelector('[data-i18n="num2_label"]')) {
+      el.textContent = count + 'M+';
+    }
+  });
+}
 
-  document.querySelectorAll('.cat-tab').forEach(tab=>{tab.addEventListener('click',()=>{const cat=tab.getAttribute('data-cat');document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.cat-section').forEach(s=>s.classList.remove('active'));tab.classList.add('active');document.getElementById('cat-'+cat).classList.add('active');document.querySelectorAll('#cat-'+cat+' .fade-up').forEach(el=>observer.observe(el));});});
+// Init lang
+setLang(currentLang);
 
-  const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
-  document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+// ─── NAV scroll ───
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+});
 
-  const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.counter').forEach(c=>{const target=parseInt(c.getAttribute('data-target')),suffix=c.getAttribute('data-suffix')||'',start=performance.now();function tick(now){const p=Math.min((now-start)/1400,1),ease=1-Math.pow(1-p,3);c.textContent=Math.round(ease*target)+suffix;if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);});cObs.unobserve(e.target);}});},{threshold:0.3});
-  cObs.observe(document.getElementById('metrics'));
+// ─── Hamburger ───
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() { mobileMenu.classList.remove('open'); }
+document.addEventListener('click', e => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMobile();
+});
 
-  document.getElementById('contactForm').addEventListener('  document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();this.style.display='none';document.getElementById('formSuccess').classList.add('show');});
-  </script>
+// ─── TABS ───
+function switchTab(index) {
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => btn.classList.toggle('active', i === index));
+  document.querySelectorAll('.tab-panel').forEach((panel, i) => panel.classList.toggle('active', i === index));
+  // Re-trigger fade-up for new panel
+  document.querySelectorAll('#tab-' + index + ' .fade-up').forEach(el => {
+    el.classList.remove('visible');
+    setTimeout(() => el.classList.add('visible'), 50);
+  });
+}
+
+// ─── IntersectionObserver: fade-up ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ─── Counter animation ───
+const numberSuffixes = { 0: 'K+', 1: 'M+', 2: '+', 3: '+' };
+const numberPrefixes = { 0: '', 1: '', 2: '', 3: '' };
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.getAttribute('data-count'));
+    const idx = [...document.querySelectorAll('[data-count]')].indexOf(el);
+    const suffix = idx === 1 ? 'M+' : (idx < 2 ? 'K+' : '+');
+    let current = 0;
+    const duration = 1200;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current) + suffix;
+      if (current >= target) clearInterval(timer);
+    }, 16);
+    counterObserver.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+// ─── Form submit ───
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'block';
+  if (translations[currentLang]['form_ok']) {
+    success.querySelector('p').textContent = translations[currentLang]['form_ok'];
+  }
+}
+</script>
 </body>
 </html>
